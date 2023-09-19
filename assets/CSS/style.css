@@ -1,0 +1,184 @@
+body {
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	color: #fff;
+	font-family: 'Jomhuria', cursive;
+	font-size: 3vw;
+	padding: 40px;
+	line-height: 65%;
+}
+
+.scrollbar {
+  scrollbar-color: #fff #000;
+  scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+  width: 20px; /* Ширина полосы прокрутки */
+  border: 2px solid #fff;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #fff;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+h2 {
+	font-size: 4vw;
+	text-align: center;
+}
+
+h4 {
+	font-size: 2vw;
+}
+
+.header {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-column-gap: 0px;
+	grid-row-gap: 0px;
+}
+
+.health {
+	display: flex;
+	align-items: center;
+	height: 90px;
+}
+
+.health__image {
+	width: 10%;
+}
+
+.health-bar {
+	width: 35%;
+	height: 55%;
+	border: 6px solid #fff;
+	color: #878787;
+	position: relative;
+	overflow: hidden;
+	margin-left: 15px;
+}
+
+.health-bar span {
+	position: absolute;
+	top: 60%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.health-bar::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	background: linear-gradient(to right, #fff, #fff);
+	width: var(--fill-width, 100%);
+}
+
+.player {
+	display: flex;
+	align-items: center;
+	justify-content: right;
+	margin-left: auto;
+	width: 50%;
+}
+
+.about {
+	margin-right: 20px;
+}
+
+.player__avatar {
+	width: 20%;
+}
+
+.main {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	grid-template-rows: 90% 90%;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	height: 70%;
+}
+
+.title {
+	margin-bottom: 20px;
+}
+
+.update-log {
+	border: 5px solid #fff;
+	padding: 40px;
+	height: 100%;
+	overflow: auto;
+	scrollbar-color: #fff #000;
+  scrollbar-width: thin;
+}
+
+.contact__border {
+	border: 5px solid #fff;
+	height: 100%;
+}
+
+.our-contact {
+	display: flex;
+	align-items: center;
+	margin: 40px;
+}
+
+.our-contact:last-child {
+	margin-bottom: 0;
+}
+
+.our-contact__logo {
+	width: 15%;
+	height: auto;
+}
+
+.contact__text {
+	display: flex;
+	flex-direction: column;
+}
+
+.contact__text {
+	margin-left: 28px;
+}
+
+.icons {
+	width: 100%;
+}
+
+.icon {
+	margin-right: 1%;
+	width: 5%;
+}
+
+.icon:last-child {
+	margin-right: 0;
+}
+
+
+.icon_active{
+	border: 6px solid #FFF;
+}
+
+@media screen and (max-width: 1400px) {
+	.health-bar {
+		height: 40%;
+	}
+	.main{
+		height: 55%;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	.health-bar {
+		height: 30%;
+	}
+	.main{
+		height: 45%;
+	}
+}
