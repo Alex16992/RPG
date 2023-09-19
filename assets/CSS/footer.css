@@ -1,0 +1,17 @@
+.icons {
+	width: 100%;
+}
+
+.icon {
+	margin-right: 1%;
+	width: 5%;
+}
+
+.icon:last-child {
+	margin-right: 0;
+}
+
+
+.icon_active{
+	border: 6px solid #FFF;
+}

@@ -6,5 +6,5 @@ const healthText = document.getElementById('healthText');
 
 const fillWidth = (currentHealth / maxHealth) * 100;
 
-healthBar.style.setProperty('--fill-width', `${fillWidth}%`);
-healthText.innerText = `${currentHealth}/${maxHealth}`;
+healthBar.style.setProperty('--fill-width', `${fillWidth}%`); // Уменьшение полоски здоровья
+healthText.innerText = `${currentHealth}/${maxHealth}`; // Вывод здоровья
