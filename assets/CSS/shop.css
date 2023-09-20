@@ -67,6 +67,7 @@
 	display: grid;
 	grid-template-columns: 25% 75%;
 	height: 20%;
+	margin-bottom: 20px;
 }
 
 .detail__item-about{

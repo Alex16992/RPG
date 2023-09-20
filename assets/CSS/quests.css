@@ -1,0 +1,84 @@
+.main{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 90%;
+	margin-top: 15px;
+	margin-bottom: 65px;
+	height: 70%;
+}
+
+.quests{
+	margin-right: 25px;
+}
+
+.quests-border{
+	border: 5px solid #fff;
+	height: 100%;
+	overflow: auto;
+	scrollbar-color: #fff #000;
+  	scrollbar-width: thin;
+}
+
+.quest{
+  	padding: 20px 20px;
+  	display: grid;
+	grid-template-columns: 90% 10%;
+}
+
+.quests__text{
+	align-self: center;
+}
+
+.quests__detail{
+	width: 80%;
+	justify-self: end;
+}
+
+.detail{
+	margin-left: 25px;
+}
+
+.detail-border{
+	border: 5px solid #fff;
+	height: 100%;
+	padding: 30px 30px;
+}
+
+.detail__main{
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	margin-bottom: 25px;
+}
+
+.detail__main-location{
+	justify-self: end;
+}
+
+.detail-description{
+	overflow: auto;
+	scrollbar-color: #fff #000;
+  	scrollbar-width: thin;
+  	height: 75%;
+}
+
+.detail__status{
+	display: grid;
+	grid-template-columns: 60% 40%;
+	align-self: center;
+}
+
+.detail__status-progress{
+	align-self: center;
+}
+
+.detail__status-pass{
+	justify-self: end;
+	align-self: center;
+	padding: 4% 15% 3% 15%;
+	border: 5px solid #fff;
+}
+
+.detail__status-pass-inactive{
+	color: #626262;
+	border: 5px solid #626262;
+}
