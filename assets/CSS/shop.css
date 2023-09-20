@@ -1,31 +1,10 @@
 .main{
 	display: grid;
-	grid-template-columns: 1fr 2fr 1fr;
+	grid-template-columns: 2fr 1fr 2fr;
 	grid-template-rows: 90%;
 	margin-top: 15px;
 	margin-bottom: 65px;
 	height: 70%;
-}
-
-.equipped{
-	display: grid;
-	align-content: center;
-	width: 100%;
-}
-
-.equipped_stats{
-	margin-bottom: 20px;
-}
-
-.equipped_items{
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	width: 100%;
-}
-
-.equipped_items img{
-	margin-bottom: 30px;
-	width: 60%;
 }
 
 .inventory-border{
@@ -34,6 +13,10 @@
 	overflow: auto;
 	scrollbar-color: #fff #000;
   	scrollbar-width: thin;
+}
+
+.inventory{
+	padding-right: 25px;
 }
 
 .inventory__item{
@@ -73,7 +56,7 @@
 }
 
 .detail__item-image{
-	width: 80%;
+	width: 90%;
 }
 
 .detail__item-title{
@@ -100,7 +83,7 @@
 
 .detail__item__footer{
 	display: grid;
-	grid-template-columns: 65% 35%;
+	grid-template-columns: 75% 25%;
 	align-content: end;
 	align-self: end;
 }
@@ -109,18 +92,55 @@
 	align-self: end;
 }
 
-.detail__item__footer-equip{
+.detail__item__footer-trade{
 	display: grid;
 }
 
-.detail__item__footer-equip-image{
+.detail__item__footer-trade-image{
 	justify-self: center;
 	align-self: end;
-	width: 55%;
+	width: 90%;
 }
 
-.detail__item__footer-equip p{
+.detail__item__footer-trade p{
 	justify-self: center;
 	align-self: end;
 	text-align: center;
+}
+
+.seller-inventory{
+	padding-left: 25px;
+}
+
+.seller-inventory-border{
+	border: 5px solid #fff;
+	height: 100%;
+	overflow: auto;
+	scrollbar-color: #fff #000;
+  	scrollbar-width: thin;
+}
+
+.seller-inventory{
+	padding-right: 25px;
+}
+
+.seller-inventory__item{
+	padding: 10px 20px;
+	display: grid;
+	grid-template-columns: 10% 60% 30%;
+}
+
+.seller-inventory__item-image{
+	width: 100%;
+}
+
+.seller-inventory__item-about{
+	margin-top: 5px;
+	margin-left: 12px;
+	align-self: center;
+}
+
+.seller-inventory__item-detail{
+	justify-self: end;
+	width: 30%;
 }
