@@ -95,3 +95,7 @@ h4 {
 .player__avatar {
 	width: 20%;
 }
+
+.title {
+	margin-bottom: 20px;
+}

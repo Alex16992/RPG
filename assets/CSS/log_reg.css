@@ -1,0 +1,52 @@
+body{
+	padding: 0;
+}
+
+main{
+	width: 100%;
+	height: 100%;
+	background-image: url(../Image/Interface/login_bg.png);
+	background-position: center; /* Center the image */
+	background-repeat: no-repeat; /* Do not repeat the image */
+	background-size: cover;
+	display: grid;
+}
+
+.form{
+	width: 30%;
+	align-self: center;
+	justify-self: center;
+}
+
+.input {
+	background-color: transparent;
+	border: 5px solid white;
+	color: white;
+	padding: 9px 5px 5px 5px;
+	font-size: 2vw;
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.input::placeholder {
+	color: #626262;
+}
+
+.submit{
+	background-color: transparent;
+	border: 5px solid white;
+	color: white;
+	padding: 5px 5px 5px 5px;
+	margin-bottom: 20px;
+	font-size: 2vw;
+	height: 100%;
+	width: 100%;
+}
+
+.form__text{
+	color: #909090;
+}
+
+.form__text a{
+	color: #fff;
+}
