@@ -99,3 +99,21 @@ h4 {
 .title {
 	margin-bottom: 20px;
 }
+
+@media screen and (max-width: 1400px) {
+	.health-bar {
+		height: 40%;
+	}
+	.main{
+		height: 55%;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	.health-bar {
+		height: 30%;
+	}
+	.main{
+		height: 45%;
+	}
+}

@@ -13,7 +13,7 @@
 	height: 100%;
 	overflow: auto;
 	scrollbar-color: #fff #000;
-  scrollbar-width: thin;
+  	scrollbar-width: thin;
 }
 
 .contact__border {
@@ -43,22 +43,4 @@
 
 .contact__text {
 	margin-left: 28px;
-}
-
-@media screen and (max-width: 1400px) {
-	.health-bar {
-		height: 40%;
-	}
-	.main{
-		height: 55%;
-	}
-}
-
-@media screen and (max-width: 1000px) {
-	.health-bar {
-		height: 30%;
-	}
-	.main{
-		height: 45%;
-	}
 }
