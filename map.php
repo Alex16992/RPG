@@ -13,21 +13,7 @@
 	<link rel="stylesheet" type="text/css" href="assets/CSS/map.css">
 </head>
 <body>
-	<header class="header">
-		<div class="health">
-			<img class="health__image" src="assets/Image/Interface/health.png" alt="HP">
-			<div class="health-bar" id="healthBar">
-				<span id="healthText"></span>
-			</div>
-		</div>
-		<div class="player">
-			<div class="about">
-				<p class="about__level">Level: 9</p>
-				<p class="about__class">Warrior</p>
-			</div>
-			<img class="player__avatar" src="assets/Image/Interface/avatar.png" alt="Avatar">
-		</div>
-	</header>
+<? include 'header.php'; ?>
 	<main class="main">
 		<div class="locations">
 			<h2 class="title">Select location</h2>
@@ -56,16 +42,7 @@
 			</div>
 		</div>
 		</main>
-		<footer class="footer">
-			<div class="icons">
-				<img src="assets/Image/Interface/update.png" alt="update" class="icon">
-				<img src="assets/Image/Interface/inventory.png" alt="inventory" class="icon">
-				<img src="assets/Image/Interface/shop.png" alt="shop" class="icon">
-				<img src="assets/Image/Interface/quest.png" alt="quest" class="icon">
-				<img src="assets/Image/Interface/friends.png" alt="friends" class="icon">
-				<img src="assets/Image/Interface/map.png" alt="map" class="icon icon_active">
-			</div>
-		</footer>
+<? include 'footer.php'; ?>
 		<script src="assets/JS/script.js"></script>
 	</body>
 	</html>
