@@ -1,3 +1,5 @@
+<? include 'user_info.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,10 +16,12 @@
 </head>
 <body>
 <? include 'header.php'; ?>
+
 	<main class="main">
 		<div class="inventory">
 			<h2 class="title">Your inventory</h2>
 			<div class="inventory-border">
+
 				<div class="inventory__item">
 					<img src="assets/Image/Items/Hemlet.png" alt="Item" class="inventory__item-image">
 					<div class="inventory__item-about">
