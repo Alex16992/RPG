@@ -57,9 +57,17 @@
 	width: 30%;
 }
 
+.inventory__item-detail:hover{
+	cursor: pointer;
+}
+
 .detail-border{
 	border: 5px solid #fff;
 	height: 100%;
+}
+
+.detail__item {
+     /* Initially hide the element */
 }
 
 .detail{
@@ -67,7 +75,7 @@
 }
 
 .detail__item{
-	display: grid;
+	display: none;
 	padding: 20px;
 	height: 100%;
 }
