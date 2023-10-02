@@ -13,7 +13,7 @@
 	<link rel="stylesheet" type="text/css" href="assets/CSS/style.css">
 </head>
 <body>
-<? include 'header.php'; ?>
+	<? include 'header.php'; ?>
 	<main class="main">
 		<div class="update">
 			<h2 class="title">Last update</h2>
@@ -65,13 +65,21 @@
 					<img src="assets/Image/Interface/mail.png" alt="E-Mail" class="our-contact__logo">
 					<div class="contact__text">
 						<p class="contact__name">E-Mail</p>
-						<a href="#" class="contact__link">lehad600@gmail.com</a>
+						<a href="mailto:lehad600@gmail.com" class="contact__link">lehad600@gmail.com</a>
 					</div>
 				</div>
 			</div>
 		</div>
 	</main>
-<? include 'footer.php'; ?>
+	<? include 'footer.php'; ?>
 	<script src="assets/JS/script.js"></script>
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function() {
+			const iconElement = document.querySelector('#update');
+			if (iconElement) {
+				iconElement.classList.add('icon_active');
+			}
+		});
+	</script>
 </body>
 </html>

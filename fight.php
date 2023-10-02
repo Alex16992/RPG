@@ -150,7 +150,22 @@
 		</div>
 		<div class=""></div>
 	</footer>
-	<script src="assets/JS/script.js"></script>
+	<script type="text/javascript">
+		function HP() {
+		const currentHealth = <?php echo $health; ?>; // Текущее здоровье
+		const maxHealth = <?php echo $max_health; ?>; // Максимальное здоровье
+
+		const healthBar = document.getElementById('healthBar');
+		const healthText = document.getElementById('healthText');
+
+		const fillWidth = (currentHealth / maxHealth) * 100;
+
+		healthBar.style.setProperty('--fill-width', `${fillWidth}%`); // Уменьшение полоски здоровья
+		healthText.innerText = `${currentHealth}/${maxHealth}`; // Вывод здоровья
+	}
+
+	HP();
+	</script>
 	<script src="assets/JS/fight.js"></script>
 </body>
 </html>

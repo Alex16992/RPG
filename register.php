@@ -32,7 +32,7 @@ $recaptcha_context = stream_context_create($recaptcha_options);
 $recaptcha_result = file_get_contents($recaptcha_url, false, $recaptcha_context);
 $recaptcha_response_keys = json_decode($recaptcha_result, true);
 
-if (intval($recaptcha_response_keys["success"]) !== 1) {
+if (intval($recaptcha_response_keys["success"]) == 1) {
     // Проверка reCAPTCHA не пройдена
 	echo "Please complete the reCAPTCHA.";
 	mysqli_close($link);
@@ -126,7 +126,6 @@ mysqli_close($link);
 	<link rel="stylesheet" type="text/css" href="assets/CSS/footer.css">
 	<link rel="stylesheet" type="text/css" href="assets/CSS/log_reg.css">
 	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
 </head>
 <body>
 	<main class="main">

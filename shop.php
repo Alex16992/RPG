@@ -260,5 +260,13 @@
 	</main>
 <? include 'footer.php'; ?>
 	<script src="assets/JS/script.js"></script>
+		<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function() {
+			const iconElement = document.querySelector('#shop');
+			if (iconElement) {
+				iconElement.classList.add('icon_active');
+			}
+		});
+	</script>
 </body>
 </html>

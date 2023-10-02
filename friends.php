@@ -103,5 +103,13 @@
 	</main>
 <? include 'footer.php'; ?>
 	<script src="assets/JS/script.js"></script>
+		<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function() {
+			const iconElement = document.querySelector('#friends');
+			if (iconElement) {
+				iconElement.classList.add('icon_active');
+			}
+		});
+	</script>
 </body>
 </html>

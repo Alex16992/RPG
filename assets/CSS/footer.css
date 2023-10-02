@@ -2,6 +2,10 @@
 	width: 100%;
 }
 
+.icons a{
+	margin-right: 1%;
+}
+
 .icon {
 	margin-right: 1%;
 	width: 5%;
