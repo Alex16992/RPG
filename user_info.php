@@ -16,7 +16,7 @@ if ($link === false) {
 
 // Fetch user data using the stored user ID
 $userId = $_SESSION['user_id'];
-$sql = "SELECT login, email, health, max_health, lvl FROM users WHERE id='$userId'";
+$sql = "SELECT * FROM users WHERE id='$userId'";
 $result = mysqli_query($link, $sql);
 
 if ($result) {
