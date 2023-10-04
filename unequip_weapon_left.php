@@ -20,8 +20,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         // Use the values from the weapon_left item
         $itemId = $weapon_leftItem[0];
         $lvl = $weapon_leftItem[1];
-
-        // Remove the equipped item from the weapon_left slot
+if ($itemId) {
+            // Remove the equipped item from the weapon_left slot
         $removeQuery = "UPDATE users SET weapon_left = NULL WHERE id = $userId"; // Убедитесь, что есть присвоенное значение для $userId
         $removeResult = mysqli_query($link, $removeQuery);
 
@@ -61,7 +61,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 } else {
 
 }
-} else {
+}
+}
+ else {
 
 }
 }

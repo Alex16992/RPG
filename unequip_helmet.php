@@ -20,8 +20,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         // Use the values from the helmet item
         $itemId = $helmetItem[0];
         $lvl = $helmetItem[1];
-
-        // Remove the equipped item from the helmet slot
+        if ($itemId) {
+                    // Remove the equipped item from the helmet slot
         $removeQuery = "UPDATE users SET helmet = NULL WHERE id = $userId"; // Убедитесь, что есть присвоенное значение для $userId
         $removeResult = mysqli_query($link, $removeQuery);
 
@@ -61,6 +61,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 } else {
 
 }
+        }
+
 } else {
 
 }

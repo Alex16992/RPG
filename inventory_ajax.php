@@ -17,6 +17,13 @@ if ($result) {
     $inventory = json_decode($row['items'], true);
     mysqli_free_result($result);
 
+    // Function to compare items by level in descending order
+    function compareItems($item1, $item2) {
+        return $item2[1] - $item1[1];
+    }
+
+    // Sort the inventory using the compareItems function
+    usort($inventory, 'compareItems');
 
     $htmlOutput .= '<h2 class="title">Your inventory</h2>';
     $htmlOutput .= '<div class="inventory-border">';
@@ -51,3 +58,4 @@ if ($result) {
 }
 mysqli_close($link);
 ?>
+

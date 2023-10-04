@@ -19,11 +19,11 @@
 	<main class="main">
 		<div class="equipped">
 			<div class="equipped_stats">
-				<p class="equipped_stats-armor">
-					Armor: 15
+				<p class="equipped_stats-armor" id="equipped_stats-armor">
+					
 				</p>
-				<p class="equipped_stats-damage">
-					Damage: 20
+				<p class="equipped_stats-damage" id="equipped_stats-damage">
+					
 				</p>
 			</div>
 			<div class="equipped_items">
