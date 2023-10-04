@@ -27,12 +27,12 @@
 				</p>
 			</div>
 			<div class="equipped_items">
-				<img src="" alt="" id="jewelry_left">
-				<p data-tooltip="Всплывающая подсказка"><img src="" alt="" id="helmet" onclick="unequipHelmet()"></p>
-				<img src="" alt="" id="jewelry_right">
-				<img src="" alt="" id="weapon_left" data-tooltip="Всплывающая подсказка" onclick="unequipWeapon_left()">
-				<img src="" alt="" id="body">
-				<img src="" alt="" id="weapon_right" onclick="unequipWeapon_right()">
+				<p id="jewelry_left_lvl"><img src="" alt="" id="jewelry_left"></p>
+				<p id="helmet_lvl"><img src="" alt="" id="helmet" onclick="unequipHelmet()"></p>
+				<p id="jewelry_right_lvl"><img src="" alt="" id="jewelry_right"></p>
+				<p id="weapon_left_lvl"><img src="" alt="" id="weapon_left" onclick="unequipWeapon_left()"></p>
+				<p id="body_lvl"><img src="" alt="" id="body"></p>
+				<p id="weapon_right_lvl"><img src="" alt="" id="weapon_right" onclick="unequipWeapon_right()"></p>
 			</div>
 		</div>
 		<div id="inventory">
@@ -82,5 +82,13 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 	<script src="assets/JS/script.js"></script>
 	<script src="assets/JS/inventory.js"></script>
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function() {
+			const iconElement = document.querySelector('#inventory_icon');
+			if (iconElement) {
+				iconElement.classList.add('icon_active');
+			}
+		});
+	</script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 	<footer class="footer">
 		<div class="icons">
 			<a href="index.php"><img src="assets/Image/Interface/update.png" alt="update" id="update" class="icon"></a>
-			<a href="inventory.php"><img src="assets/Image/Interface/inventory.png" alt="inventory" id="inventory" class="icon"></a>
+			<a href="inventory.php"><img src="assets/Image/Interface/inventory.png" alt="inventory" id="inventory_icon" class="icon"></a>
 			<a href="shop.php"><img src="assets/Image/Interface/shop.png" alt="shop" id="shop" class="icon"></a>
 			<a href="quests.php"><img src="assets/Image/Interface/quest.png" alt="quest" id="quest" class="icon"></a>
 			<a href="friends.php"><img src="assets/Image/Interface/friends.png" alt="friends" id="friends" class="icon"></a>
