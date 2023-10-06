@@ -1,5 +1,3 @@
-<? include 'user_info.php'; ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,119 +16,43 @@
 <? include 'header.php'; ?>
 
 	<main class="main">
-		<div class="inventory">
-			<h2 class="title">Your inventory</h2>
-			<div class="inventory-border">
-
-				<div class="inventory__item">
-					<img src="assets/Image/Items/Hemlet.png" alt="Item" class="inventory__item-image">
-					<div class="inventory__item-about">
-						<p class="inventory__item-name">
-							Knight's helmet
-						</p>
-						<p class="inventory__item-lvl">
-							Level - 5
-						</p>
-					</div>
-					<img src="assets/Image/Interface/Detail.png" alt="detail" class="inventory__item-detail">
-				</div>
-				<div class="inventory__item">
-					<img src="assets/Image/Items/Hemlet.png" alt="Item" class="inventory__item-image">
-					<div class="inventory__item-about">
-						<p class="inventory__item-name">
-							Knight's helmet
-						</p>
-						<p class="inventory__item-lvl">
-							Level - 5
-						</p>
-					</div>
-					<img src="assets/Image/Interface/Detail.png" alt="detail" class="inventory__item-detail">
-				</div>
-				<div class="inventory__item">
-					<img src="assets/Image/Items/Hemlet.png" alt="Item" class="inventory__item-image">
-					<div class="inventory__item-about">
-						<p class="inventory__item-name">
-							Knight's helmet
-						</p>
-						<p class="inventory__item-lvl">
-							Level - 5
-						</p>
-					</div>
-					<img src="assets/Image/Interface/Detail.png" alt="detail" class="inventory__item-detail">
-				</div>
-				<div class="inventory__item">
-					<img src="assets/Image/Items/Hemlet.png" alt="Item" class="inventory__item-image">
-					<div class="inventory__item-about">
-						<p class="inventory__item-name">
-							Knight's helmet
-						</p>
-						<p class="inventory__item-lvl">
-							Level - 5
-						</p>
-					</div>
-					<img src="assets/Image/Interface/Detail.png" alt="detail" class="inventory__item-detail">
-				</div>
-				<div class="inventory__item">
-					<img src="assets/Image/Items/Hemlet.png" alt="Item" class="inventory__item-image">
-					<div class="inventory__item-about">
-						<p class="inventory__item-name">
-							Knight's helmet
-						</p>
-						<p class="inventory__item-lvl">
-							Level - 5
-						</p>
-					</div>
-					<img src="assets/Image/Interface/Detail.png" alt="detail" class="inventory__item-detail">
-				</div>
-				<div class="inventory__item">
-					<img src="assets/Image/Items/Hemlet.png" alt="Item" class="inventory__item-image">
-					<div class="inventory__item-about">
-						<p class="inventory__item-name">
-							Knight's helmet
-						</p>
-						<p class="inventory__item-lvl">
-							Level - 5
-						</p>
-					</div>
-					<img src="assets/Image/Interface/Detail.png" alt="detail" class="inventory__item-detail">
-				</div>
-			</div>	
+		<div id="inventory" class="inventory">
+			
 		</div>
-		<div class="detail">
+		<div class="detail" id="itemDetail">
 			<h2 class="title">Detail</h2>
 			<div class="detail-border">
-				<div class="detail__item">
+				<div class="detail__item" id="detail__item">
 					<div class="detail__item_main">
 						<img src="assets/Image/Items/Hemlet.png" alt="Item" class="detail__item-image">
 						<div class="detail__item-about">
+
 							<p class="detail__item-name">
-								Knight's helmet
+
 							</p>
 							<p class="detail__item-lvl">
-								Level - 5
+
 							</p>
 						</div>
 					</div>
-					
-					
 					<p class="detail__item-description">
-						This axe belonged to a lumberjack named Jack, whose fate had not turned out well... This axe belonged to a lumberjack named Jack, whose fate had not turned out well...
+
 					</p>
 					<div class="detail__item__footer">
 						<div class="detail__item__footer__stats">
 							<div class="detail__item__footer__stats-main">
-								Damage: 14
+
 							</div>
 							<div class="detail__item__footer__stats-slot">
-								Slot: hand
+
 							</div>
 							<div class="detail__item__footer__stats-price">
-								Price: 46 coins
+
 							</div>
 						</div>
-						<div class="detail__item__footer-trade">
-							<p>Sell</p>
-							<img src="assets/Image/Interface/Equip.png" alt="trade" class="detail__item__footer-trade-image">
+						<div class="detail__item__footer-buysell">
+							<p class="detail__item__footer-buysell-text">Equip</p>
+							<img src="assets/Image/Interface/Equip.png" alt="Equip" class="detail__item__footer-equip-image">
 						</div>
 					</div>
 				</div>
@@ -263,7 +185,9 @@
 		</div>
 	</main>
 <? include 'footer.php'; ?>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 	<script src="assets/JS/script.js"></script>
+	<script src="assets/JS/shop.js"></script>
 		<script type="text/javascript">
 		document.addEventListener('DOMContentLoaded', function() {
 			const iconElement = document.querySelector('#shop');

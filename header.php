@@ -1,4 +1,4 @@
-
+<? include 'AJAX/user_info.php'; ?>
 	<header class="header">
 		<div class="health">
 			<img class="health__image" src="assets/Image/Interface/health.png" alt="HP">

@@ -1,4 +1,4 @@
-<? include 'user_info.php'; ?>
+<? include 'AJAX/user_info.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">

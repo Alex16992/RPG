@@ -20,7 +20,7 @@
 }
 
 .inventory__item{
-	padding: 10px 20px;
+	padding: 5px 20px;
 	display: grid;
 	grid-template-columns: 10% 60% 30%;
 }
@@ -46,11 +46,12 @@
 }
 
 .detail{
+
 	min-height: 100%;
 }
 
 .detail__item{
-	display: grid;
+	display: none;
 	padding: 20px;
 	height: 100%;
 }
@@ -126,7 +127,7 @@
 }
 
 .seller-inventory__item{
-	padding: 10px 20px;
+	padding: 5px 20px;
 	display: grid;
 	grid-template-columns: 10% 60% 30%;
 }
@@ -144,4 +145,22 @@
 .seller-inventory__item-detail{
 	justify-self: end;
 	width: 30%;
+}
+
+.inventory__item-detail:hover{
+	cursor: pointer;
+}
+
+.seller-inventory__item-detail:hover{
+	cursor: pointer;
+}
+
+.detail__item__footer-equip-image{
+	justify-self: center;
+	align-self: end;
+	width: 95%;
+}
+
+.detail__item__footer-equip-image:hover{
+	cursor: pointer;
 }

@@ -30,7 +30,7 @@ function itemImage($item_id, $userId) {
     }
 
     $itemrow = mysqli_fetch_assoc($itemresult);
-    $equippedItems = json_decode($item_id, true);  // Используем переданный item_id
+    $equippedItems = json_decode($item_id, true);
     $itemId = $equippedItems[0];
 
     $sqlItems = "SELECT image FROM items WHERE id = '$itemId'";
@@ -69,7 +69,7 @@ function itemLvl($item_id, $userId) {
     }
 
     $itemrow = mysqli_fetch_assoc($itemresult);
-    $equippedItems = json_decode($item_id, true);  // Используем переданный item_id
+    $equippedItems = json_decode($item_id, true);
     $itemLvl = $equippedItems[1];
 
     mysqli_close($link);

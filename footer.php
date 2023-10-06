@@ -9,7 +9,7 @@
 		</div>
 	</footer>
 	<script type="text/javascript">
-		function HP() {
+	function HP() {
 		const currentHealth = <?php echo $health; ?>; // Текущее здоровье
 		const maxHealth = <?php echo $max_health; ?>; // Максимальное здоровье
 

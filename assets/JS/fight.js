@@ -1,6 +1,7 @@
+// Get the player health
 function HealthPlayer() {
-	const currentHealthPlayer = 13; // Текущее здоровье
-	const maxHealthPlayer = 22; // Максимальное здоровье
+	const currentHealthPlayer = 13; // Current health
+	const maxHealthPlayer = 22; // Max health
 
 	const playerHealth = document.getElementById('PlayerHealth');
 	const playerHealthValue = document.getElementById('PlayerHealthValue');
@@ -11,9 +12,10 @@ function HealthPlayer() {
 	playerHealthValue.innerText = `${currentHealthPlayer}/${maxHealthPlayer}`;
 }
 
+// Get the enemy health
 function HealthEnemy() {
-  	const currentHealthEnemy = 10;
-	const maxHealthEnemy = 10;
+  	const currentHealthEnemy = 10; // Current health
+	const maxHealthEnemy = 10; // Max health
 
 	const enemyHealth = document.getElementById('EnemyHealth');
 	const enemyHealthValue = document.getElementById('EnemyHealthValue');

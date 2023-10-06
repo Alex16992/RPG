@@ -14,10 +14,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $itemUpdate = "[$itemId, $lvl]";
     $itemquery = "SELECT items FROM users WHERE id = $userId";
     $itemresult = mysqli_query($link, $itemquery);
-    if ($result) {
+    if ($itemresult) {
+
+        //Looking for an item in the player's inventory
         $itemrow = mysqli_fetch_assoc($itemresult);
         $items = json_decode($itemrow['items'], true);
-
         $itemFound = false;
         foreach ($items as $item) {
             if ($item[0] == $itemId && $item[1] == $lvl) {
@@ -25,6 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 break;
             }
         }
+
 
         if ($itemFound) {
             // Update the user's equipment based on the slot
@@ -47,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $removerow = mysqli_fetch_assoc($removeresult);
                     $removeitems = json_decode($row['items'], true);
 
-        // Find and remove the equipped item from the inventory
+                    // Find and remove the equipped item from the inventory
                     foreach ($removeitems as $key => $removeitem) {
                         if ($removeitem == [$itemId, $lvl]) {
                             unset($removeitems[$key]);
@@ -55,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         }
                     }
 
-        // Update the user's inventory in the database
+                    // Update the user's inventory in the database
                     $updatedInventory = json_encode(array_values($removeitems));
                     $updateQuery = "UPDATE users SET items = '$updatedInventory' WHERE id = $userId";
                     $updateResult = mysqli_query($link, $updateQuery);

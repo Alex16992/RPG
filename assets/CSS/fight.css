@@ -10,26 +10,21 @@
 .PlayerStats{
 	border: 5px solid #fff;
 	padding: 20px 30px;
-	height: 100%;
+	height: 95%;
 	overflow: auto;
 	scrollbar-color: #fff #000;
   	scrollbar-width: thin;
+  	align-self: end;
 }
 
 .EnemyStats{
 	border: 5px solid #fff;
 	padding: 20px 30px;
-	height: 100%;
+	height: 95%;
 	overflow: auto;
 	scrollbar-color: #fff #000;
   	scrollbar-width: thin;
-}
-
-.BattleField{
-	background-image: url(../Image/bg/cemetery.png);
-	background-position: bottom;
-	background-repeat: no-repeat;
-	background-size: cover;
+  	align-self: end;
 }
 
 h3{
@@ -47,6 +42,10 @@ h3{
 }
 
 .BattleField{
+	background-image: url(../Image/bg/cemetery.png);
+	background-position: bottom;
+	background-repeat: no-repeat;
+	background-size: cover;
 	display: grid;
 	height: 100%;
 	grid-template-columns: 3fr 1fr 3fr;
