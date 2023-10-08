@@ -1,21 +1,24 @@
-.icons {
-	width: 100%;
-}
-
 .icons a{
-	margin-right: 1%;
+	margin-right: 15px;
 }
 
-.icon {
-	margin-right: 1%;
-	width: 5%;
+.icon_active {
+  position: relative;
+  display: inline-block;
 }
 
-.icon:last-child {
-	margin-right: 0;
+.icon_active img {
+  position: relative;
 }
 
-
-.icon_active{
-	border: 6px solid #FFF;
+.icon_active::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 5px solid #FFF; 
+  box-sizing: border-box; 
+  z-index: 2; 
 }

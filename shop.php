@@ -51,137 +51,15 @@
 							</div>
 						</div>
 						<div class="detail__item__footer-buysell">
-							<p class="detail__item__footer-buysell-text">Equip</p>
+							<p class="detail__item__footer-buysell-text"></p>
 							<img src="assets/Image/Interface/Equip.png" alt="Equip" class="detail__item__footer-equip-image">
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="seller-inventory">
-			<h2 class="title">Seller</h2>
-			<div class="seller-inventory-border">
-				<div class="seller-inventory__item">
-					<img src="assets/Image/Items/Hemlet.png" alt="Item" class="seller-inventory__item-image">
-					<div class="seller-inventory__item-about">
-						<p class="seller-inventory__item-name">
-							Knight's helmet
-						</p>
-						<p class="seller-inventory__item-lvl">
-							Level - 5
-						</p>
-					</div>
-					<img src="assets/Image/Interface/Detail.png" alt="detail" class="seller-inventory__item-detail">
-				</div>
-				<div class="seller-inventory__item">
-					<img src="assets/Image/Items/Hemlet.png" alt="Item" class="seller-inventory__item-image">
-					<div class="seller-inventory__item-about">
-						<p class="seller-inventory__item-name">
-							Knight's helmet
-						</p>
-						<p class="seller-inventory__item-lvl">
-							Level - 5
-						</p>
-					</div>
-					<img src="assets/Image/Interface/Detail.png" alt="detail" class="seller-inventory__item-detail">
-				</div>
-				<div class="seller-inventory__item">
-					<img src="assets/Image/Items/Hemlet.png" alt="Item" class="seller-inventory__item-image">
-					<div class="seller-inventory__item-about">
-						<p class="seller-inventory__item-name">
-							Knight's helmet
-						</p>
-						<p class="seller-inventory__item-lvl">
-							Level - 5
-						</p>
-					</div>
-					<img src="assets/Image/Interface/Detail.png" alt="detail" class="seller-inventory__item-detail">
-				</div>
-				<div class="seller-inventory__item">
-					<img src="assets/Image/Items/Hemlet.png" alt="Item" class="seller-inventory__item-image">
-					<div class="seller-inventory__item-about">
-						<p class="seller-inventory__item-name">
-							Knight's helmet
-						</p>
-						<p class="seller-inventory__item-lvl">
-							Level - 5
-						</p>
-					</div>
-					<img src="assets/Image/Interface/Detail.png" alt="detail" class="seller-inventory__item-detail">
-				</div>
-				<div class="seller-inventory__item">
-					<img src="assets/Image/Items/Hemlet.png" alt="Item" class="seller-inventory__item-image">
-					<div class="seller-inventory__item-about">
-						<p class="seller-inventory__item-name">
-							Knight's helmet
-						</p>
-						<p class="seller-inventory__item-lvl">
-							Level - 5
-						</p>
-					</div>
-					<img src="assets/Image/Interface/Detail.png" alt="detail" class="seller-inventory__item-detail">
-				</div>
-				<div class="seller-inventory__item">
-					<img src="assets/Image/Items/Hemlet.png" alt="Item" class="seller-inventory__item-image">
-					<div class="seller-inventory__item-about">
-						<p class="seller-inventory__item-name">
-							Knight's helmet
-						</p>
-						<p class="seller-inventory__item-lvl">
-							Level - 5
-						</p>
-					</div>
-					<img src="assets/Image/Interface/Detail.png" alt="detail" class="seller-inventory__item-detail">
-				</div>
-				<div class="seller-inventory__item">
-					<img src="assets/Image/Items/Hemlet.png" alt="Item" class="seller-inventory__item-image">
-					<div class="seller-inventory__item-about">
-						<p class="seller-inventory__item-name">
-							Knight's helmet
-						</p>
-						<p class="seller-inventory__item-lvl">
-							Level - 5
-						</p>
-					</div>
-					<img src="assets/Image/Interface/Detail.png" alt="detail" class="seller-inventory__item-detail">
-				</div>
-				<div class="seller-inventory__item">
-					<img src="assets/Image/Items/Hemlet.png" alt="Item" class="seller-inventory__item-image">
-					<div class="seller-inventory__item-about">
-						<p class="seller-inventory__item-name">
-							Knight's helmet
-						</p>
-						<p class="seller-inventory__item-lvl">
-							Level - 5
-						</p>
-					</div>
-					<img src="assets/Image/Interface/Detail.png" alt="detail" class="seller-inventory__item-detail">
-				</div>
-				<div class="seller-inventory__item">
-					<img src="assets/Image/Items/Hemlet.png" alt="Item" class="seller-inventory__item-image">
-					<div class="seller-inventory__item-about">
-						<p class="seller-inventory__item-name">
-							Knight's helmet
-						</p>
-						<p class="seller-inventory__item-lvl">
-							Level - 5
-						</p>
-					</div>
-					<img src="assets/Image/Interface/Detail.png" alt="detail" class="seller-inventory__item-detail">
-				</div>
-				<div class="seller-inventory__item">
-					<img src="assets/Image/Items/Hemlet.png" alt="Item" class="seller-inventory__item-image">
-					<div class="seller-inventory__item-about">
-						<p class="seller-inventory__item-name">
-							Knight's helmet
-						</p>
-						<p class="seller-inventory__item-lvl">
-							Level - 5
-						</p>
-					</div>
-					<img src="assets/Image/Interface/Detail.png" alt="detail" class="seller-inventory__item-detail">
-				</div>
-			</div>	
+		<div id="seller-inventory" class="seller-inventory">
+			
 		</div>
 	</main>
 <? include 'footer.php'; ?>
