@@ -29,5 +29,4 @@ if ($result) {
     $max_health = $row['max_health'];
 }
 
-mysqli_close($link);
 ?>

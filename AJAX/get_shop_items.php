@@ -1,14 +1,9 @@
 <? include 'user_info.php'; ?>
 
 <?php
-$link = mysqli_connect("localhost", "root", "", "rpg");
-
-if ($link === false) {
-    die("ERROR: Could not connect. " . mysqli_connect_error());
-}
 
 $userId = $_SESSION['user_id'];
-$query = "SELECT update_shop, shop FROM users WHERE id = $userId";
+$query = "SELECT update_shop, shop, lvl FROM users WHERE id = $userId";
 $result = mysqli_query($link, $query);
 
 if ($result) {
@@ -45,7 +40,10 @@ if ($result) {
         for ($i = 0; $i < 10; $i++) {
             $randomIndex = array_rand($randomItemIds);
             $randomItemId = $randomItemIds[$randomIndex];
-            $randomItemLevel = rand(1, 10);
+            $randomItemLevel = rand($row['lvl']-3, $row['lvl']+3);
+            if ($randomItemLevel <= 0) {
+                $randomItemLevel = 1;
+            }
             $shopData[] = [$randomItemId, $randomItemLevel];
         }
 

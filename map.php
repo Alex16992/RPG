@@ -13,22 +13,17 @@
 	<link rel="stylesheet" type="text/css" href="assets/CSS/map.css">
 </head>
 <body>
-<? include 'header.php'; ?>
+	<? include 'header.php'; ?>
 	<main class="main">
-		<div class="locations">
+		<div class="locations" id="locations">
 			<h2 class="title">Select location</h2>
-			<div class="locations__list">
-				<img src="assets/Image/Interface/forest.png" alt="">
-				<img src="assets/Image/Interface/forest.png" alt="">
-				<img src="assets/Image/Interface/forest.png" alt="">
-				<img src="assets/Image/Interface/forest.png" alt="">
-				<img src="assets/Image/Interface/forest.png" alt="">
-				<img src="assets/Image/Interface/forest.png" alt="">
+			<div class="locations__list" id="locationsList">
+
 			</div>
 		</div>
-		<div class="detail">
+		<div class="detail" id="detail">
 			<h2 class="title">About location</h2>
-			<div class="detail-border">
+			<div class="detail-border" id="detail-border">
 				<h3 class="detail-name">
 					Location - cemetery
 				</h3>
@@ -37,14 +32,16 @@
 				</p>
 				<div class="detail__footer">
 					<a href="" class="detail__footer-start">Start the adventure</a>
-					<p class="detail__footer-lvl">Recommended level 0-10</p>
+					<!-- <p class="detail__footer-lvl">Recommended level 0-10</p> -->
 				</div>
 			</div>
 		</div>
-		</main>
-<? include 'footer.php'; ?>
-		<script src="assets/JS/script.js"></script>
-			<script type="text/javascript">
+	</main>
+	<? include 'footer.php'; ?>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+	<script src="assets/JS/script.js"></script>
+	<script src="assets/JS/map.js"></script>
+	<script type="text/javascript">
 		document.addEventListener('DOMContentLoaded', function() {
 			const iconElement = document.querySelector('#map');
 			if (iconElement) {
@@ -52,5 +49,5 @@
 			}
 		});
 	</script>
-	</body>
-	</html>
+</body>
+</html>

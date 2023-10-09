@@ -2,10 +2,9 @@
 
 <?php
 
-$itemId = $_GET['itemId'];
+$locationId = $_GET['locationId'];
 
-// Fetch item information based on itemId from the database
-$query = "SELECT * FROM items WHERE id = $itemId";
+$query = "SELECT name, description FROM location WHERE id = $locationId";
 $result = mysqli_query($link, $query);
 
 if ($result) {

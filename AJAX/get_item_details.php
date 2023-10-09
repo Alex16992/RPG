@@ -1,10 +1,6 @@
-<?php
-$link = mysqli_connect("localhost", "root", "", "rpg");
+<? include 'user_info.php'; ?>
 
-// Check connection
-if ($link === false) {
-    die("ERROR: Could not connect. " . mysqli_connect_error());
-}
+<?php
 
 $itemId = $_GET['itemId'];
 

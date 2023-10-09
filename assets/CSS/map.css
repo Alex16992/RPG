@@ -15,12 +15,17 @@
 	justify-content: center;
 }
 
-.locations__list img{
-	width: 100%;
-	padding: 20px;
+.locations__list-image{
+	width: 80%;
+	margin: 20px;
+}
+
+.locations__list-image:hover{
+	cursor: pointer;
 }
 
 .detail-border{
+	display: none;
 	border: 5px solid #fff;
 	height: 100%;
 	padding: 30px;

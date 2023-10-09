@@ -1,7 +1,6 @@
 <? include 'user_info.php'; ?>
 
 <?php
-$link = mysqli_connect("localhost", "root", "", "rpg");
 $itemsql = "SELECT * FROM `users` WHERE id = $userId";
 $itemresult = mysqli_query($link, $itemsql);
 
@@ -13,12 +12,6 @@ $itemrow = mysqli_fetch_assoc($itemresult);
 
 
 function itemImage($item_id, $userId) {
-    $link = mysqli_connect("localhost", "root", "", "rpg");
-
-    if (!$link) {
-        die("Connection failed: " . mysqli_connect_error());
-    }
-
     $item_id = mysqli_real_escape_string($link, $item_id);
     $userId = mysqli_real_escape_string($link, $userId);
 

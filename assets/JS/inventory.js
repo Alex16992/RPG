@@ -2,7 +2,7 @@
 //Getting items in the player inventory
 function loadInventory() {
 	const xhr = new XMLHttpRequest();
-	const url = 'AJAX/inventory_ajax.php';
+	const url = 'AJAX/get_inventory_items.php';
 
 	xhr.onreadystatechange = function() {
         if (xhr.readyState === XMLHttpRequest.DONE) {

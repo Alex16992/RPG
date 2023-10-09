@@ -1,11 +1,6 @@
 <? include 'user_info.php'; ?>
 
 <?php
-$link = mysqli_connect("localhost", "root", "", "rpg");
-
-if ($link === false) {
-    die("ERROR: Could not connect. " . mysqli_connect_error());
-}
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $itemId = $_POST['itemId'];
@@ -34,9 +29,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $itemPriceresult = mysqli_query($link, $itemPricequery);
             $itemPrice = mysqli_fetch_assoc($itemPriceresult);
             $price = round($itemPrice['price'] * ($lvl) + 2);
-            $sql = "SELECT balance FROM users WHERE id='$userId'";
-            $result = mysqli_query($link, $sql);
-            $row = mysqli_fetch_assoc($result);
 
             if ($row['balance']>=$price) {
              $query = "UPDATE users SET balance = balance - $price WHERE id = $userId";
