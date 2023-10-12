@@ -1,4 +1,4 @@
-<? include 'user_info.php'; ?>
+<?php include 'user_info.php'; ?>
 
 <?php
 

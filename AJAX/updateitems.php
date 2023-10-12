@@ -1,17 +1,13 @@
-<? include 'user_info.php'; ?>
+<?php include 'user_info.php'; ?>
 
 <?php
+$link = mysqli_connect("localhost", "root", "", "rpg");
 $itemsql = "SELECT * FROM `users` WHERE id = $userId";
 $itemresult = mysqli_query($link, $itemsql);
-
-if (!$itemresult) {
-    die("Error in SQL query: " . mysqli_error($link));
-}
-
 $itemrow = mysqli_fetch_assoc($itemresult);
 
 
-function itemImage($item_id, $userId) {
+function itemImage($item_id, $userId, $link) {
     $item_id = mysqli_real_escape_string($link, $item_id);
     $userId = mysqli_real_escape_string($link, $userId);
 
@@ -34,7 +30,6 @@ function itemImage($item_id, $userId) {
     }
 
     $rowItems = mysqli_fetch_assoc($resultItems);
-    mysqli_close($link);
     if ($rowItems['image'] != null) {
         return $rowItems['image'];
     }
@@ -44,13 +39,7 @@ function itemImage($item_id, $userId) {
     
 }
 
-function itemLvl($item_id, $userId) {
-    $link = mysqli_connect("localhost", "root", "", "rpg");
-
-    if (!$link) {
-        die("Connection failed: " . mysqli_connect_error());
-    }
-
+function itemLvl($item_id, $userId, $link) {
     $item_id = mysqli_real_escape_string($link, $item_id);
     $userId = mysqli_real_escape_string($link, $userId);
 
@@ -65,7 +54,6 @@ function itemLvl($item_id, $userId) {
     $equippedItems = json_decode($item_id, true);
     $itemLvl = $equippedItems[1];
 
-    mysqli_close($link);
     if ($itemLvl != null) {
         return "lvl: $itemLvl";
     }
@@ -75,19 +63,19 @@ function itemLvl($item_id, $userId) {
 }
 
 
-$jewelry_left = itemImage($itemrow['jewelry_left'], $userId);
-$jewelry_right = itemImage($itemrow['jewelry_right'], $userId);
-$helmet = itemImage($itemrow['helmet'], $userId);
-$body = itemImage($itemrow['body'], $userId);
-$weapon_left = itemImage($itemrow['weapon_left'], $userId);
-$weapon_right = itemImage($itemrow['weapon_right'], $userId);
+$jewelry_left = itemImage($itemrow['jewelry_left'], $userId, $link);
+$jewelry_right = itemImage($itemrow['jewelry_right'], $userId, $link);
+$helmet = itemImage($itemrow['helmet'], $userId, $link);
+$body = itemImage($itemrow['body'], $userId, $link);
+$weapon_left = itemImage($itemrow['weapon_left'], $userId, $link);
+$weapon_right = itemImage($itemrow['weapon_right'], $userId, $link);
 
-$jewelry_left_lvl = itemLvl($itemrow['jewelry_left'], $userId);
-$jewelry_right_lvl = itemLvl($itemrow['jewelry_right'], $userId);
-$helmet_lvl = itemLvl($itemrow['helmet'], $userId);
-$body_lvl = itemLvl($itemrow['body'], $userId);
-$weapon_left_lvl = itemLvl($itemrow['weapon_left'], $userId);
-$weapon_right_lvl = itemLvl($itemrow['weapon_right'], $userId);
+$jewelry_left_lvl = itemLvl($itemrow['jewelry_left'], $userId, $link);
+$jewelry_right_lvl = itemLvl($itemrow['jewelry_right'], $userId, $link);
+$helmet_lvl = itemLvl($itemrow['helmet'], $userId, $link);
+$body_lvl = itemLvl($itemrow['body'], $userId, $link);
+$weapon_left_lvl = itemLvl($itemrow['weapon_left'], $userId, $link);
+$weapon_right_lvl = itemLvl($itemrow['weapon_right'], $userId, $link);
 
 $response = array(
     'jewelry_left' => $jewelry_left,
@@ -104,6 +92,7 @@ $response = array(
     'weapon_right_lvl' => $weapon_right_lvl,
 );
 
+mysqli_close($link);
 header('Content-Type: application/json');
 echo json_encode($response);
 

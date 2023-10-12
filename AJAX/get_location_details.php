@@ -1,10 +1,10 @@
-<? include 'user_info.php'; ?>
+<?php include 'user_info.php'; ?>
 
 <?php
 
 $locationId = $_GET['locationId'];
 
-$query = "SELECT name, description FROM location WHERE id = $locationId";
+$query = "SELECT id, name, description FROM location WHERE id = $locationId";
 $result = mysqli_query($link, $query);
 
 if ($result) {

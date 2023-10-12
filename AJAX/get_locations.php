@@ -1,4 +1,4 @@
-<? include 'user_info.php'; ?>
+<?php include 'user_info.php'; ?>
 
 <?php
 $query = "SELECT id, image, name FROM location";
