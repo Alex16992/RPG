@@ -27,6 +27,9 @@ if ($result) {
     $email = $row['email'];
     $health = $row['health'];
     $max_health = $row['max_health'];
+    $combat = $row['combat'];
+    $damage = $row['damage'];
+    $armor = $row['armor'];
 }
 
 ?>

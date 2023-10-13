@@ -10,7 +10,7 @@ if (!$itemresult) {
 
 $itemrow = mysqli_fetch_assoc($itemresult);
 
-function itemChar($item_id, $userId) {
+function itemChar($item_id, $userId, $link) {
 	$item_id = mysqli_real_escape_string($link, $item_id);
 	$userId = mysqli_real_escape_string($link, $userId);
 
@@ -34,7 +34,6 @@ function itemChar($item_id, $userId) {
     }
 
     $rowItems = mysqli_fetch_assoc($resultItems);
-    mysqli_close($link);
 
     // Initialize damage and armor
     $damageItem = 0;
@@ -51,30 +50,30 @@ function itemChar($item_id, $userId) {
     return array('damage' => $damageItem, 'armor' => $armorItem);
 }
 
-$damage = $itemrow['damage'];
-$armor = $itemrow['armor'];
+$damage = 3;
+$armor = 1;
 
-$equippedStats = itemChar($itemrow['jewelry_left'], $userId);
+$equippedStats = itemChar($itemrow['jewelry_left'], $userId, $link);
 $damage += $equippedStats['damage'];
 $armor += $equippedStats['armor'];
 
-$equippedStats = itemChar($itemrow['jewelry_right'], $userId);
+$equippedStats = itemChar($itemrow['jewelry_right'], $userId, $link);
 $damage += $equippedStats['damage'];
 $armor += $equippedStats['armor'];
 
-$equippedStats = itemChar($itemrow['helmet'], $userId);
+$equippedStats = itemChar($itemrow['helmet'], $userId, $link);
 $damage += $equippedStats['damage'];
 $armor += $equippedStats['armor'];
 
-$equippedStats = itemChar($itemrow['body'], $userId);
+$equippedStats = itemChar($itemrow['body'], $userId, $link);
 $damage += $equippedStats['damage'];
 $armor += $equippedStats['armor'];
 
-$equippedStats = itemChar($itemrow['weapon_left'], $userId);
+$equippedStats = itemChar($itemrow['weapon_left'], $userId, $link);
 $damage += $equippedStats['damage'];
 $armor += $equippedStats['armor'];
 
-$equippedStats = itemChar($itemrow['weapon_right'], $userId);
+$equippedStats = itemChar($itemrow['weapon_right'], $userId, $link);
 $damage += $equippedStats['damage'];
 $armor += $equippedStats['armor'];
 
@@ -83,6 +82,9 @@ $response = array(
 	'armor' => $armor,
 );
 
+$query = "UPDATE users SET damage = '$damage', armor = '$armor' WHERE id = $userId";
+$result = mysqli_query($link, $query);
+mysqli_close($link);
 header('Content-Type: application/json');
 echo json_encode($response);
 exit;

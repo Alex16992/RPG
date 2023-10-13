@@ -1,4 +1,10 @@
-<? include 'AJAX/user_info.php'; ?>
+<?php include 'AJAX/user_info.php'; ?>
+<?php
+if ($combat == 1) {
+    header("Location: fight.php");
+    exit();
+}
+?>
 	<header class="header">
 		<div class="health">
 			<img class="health__image" src="assets/Image/Interface/health.png" alt="HP">

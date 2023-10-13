@@ -1,5 +1,5 @@
 // Get the player health
-function HealthPlayer() {
+function healthPlayer() {
 	const currentHealthPlayer = 13; // Current health
 	const maxHealthPlayer = 22; // Max health
 
@@ -12,8 +12,9 @@ function HealthPlayer() {
 	playerHealthValue.innerText = `${currentHealthPlayer}/${maxHealthPlayer}`;
 }
 
+
 // Get the enemy health
-function HealthEnemy() {
+function healthEnemy() {
   	const currentHealthEnemy = 10; // Current health
 	const maxHealthEnemy = 10; // Max health
 
@@ -26,5 +27,26 @@ function HealthEnemy() {
 	enemyHealthValue.innerText = `${currentHealthEnemy}/${maxHealthEnemy}`;
 }
 
-HealthPlayer();
-HealthEnemy();
+
+function enemyDetails() {
+	const xhr = new XMLHttpRequest();
+	const url = 'AJAX/get_enemy_details.php';
+
+	xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                document.getElementById('EnemyStats').innerHTML = xhr.responseText;
+            } 
+            else {
+                console.error('Error:', xhr.status);
+            }
+        }   
+    };
+    xhr.open('GET', url, true);
+    xhr.send();
+}
+
+
+healthPlayer();
+healthEnemy();
+enemyDetails();

@@ -15,87 +15,31 @@
 	<link rel="stylesheet" type="text/css" href="assets/CSS/fight.css">
 </head>
 <body>
-<? include 'header.php'; ?>
+
 	<main class="main">
-		<div class="PlayerStats">
+		<div class="PlayerStats" id="PlayerStats">
 			<h3 class="name">
-				Player Name
+				<?php echo $login ?>
 			</h3>
 			<div class="stats">
 				<div class="stats__name">
 					Damage
 				</div>
 				<div class="stats__value">
-					20
+					<?php echo $damage ?>
 				</div>
 			</div>
 			<div class="stats">
 				<div class="stats__name">
-					Damage
+					Armor
 				</div>
 				<div class="stats__value">
-					20
-				</div>
-			</div>
-			<div class="stats">
-				<div class="stats__name">
-					Damage
-				</div>
-				<div class="stats__value">
-					20
-				</div>
-			</div>
-			<div class="stats">
-				<div class="stats__name">
-					Damage
-				</div>
-				<div class="stats__value">
-					20
+					<?php echo $armor ?>
 				</div>
 			</div>
 			<h3 class="passive">
-				Passive effects
+				
 			</h3>
-			<div class="stats">
-				<div class="stats__name">
-					Shield
-				</div>
-				<div class="stats__value">
-					Armor + 5
-				</div>
-			</div>
-			<div class="stats">
-				<div class="stats__name">
-					Shield
-				</div>
-				<div class="stats__value">
-					Armor + 5
-				</div>
-			</div>
-			<div class="stats">
-				<div class="stats__name">
-					Shield
-				</div>
-				<div class="stats__value">
-					Armor + 5
-				</div>
-			</div>
-			<div class="stats">
-				<div class="stats__name">
-					Shield
-				</div>
-				<div class="stats__value">
-					Armor + 5
-				</div>
-			</div>
-			<div class="stats">
-				<div class="stats__name">
-					Shield
-				</div>
-				<div class="stats__value">
-					Armor + 5
-				</div>
-			</div>
 		</div>
 		<div class="BattleField">
 			<div class="BattleField__player">
@@ -112,7 +56,7 @@
 				<img src="assets/Image/Enemy/rat.png" alt="" class="BattleField__enemy__img">
 			</div>
 		</div>
-		<div class="EnemyStats">
+		<div class="EnemyStats" id="EnemyStats">
 			<h3 class="name">
 				Rat
 			</h3>
@@ -152,22 +96,6 @@
 		</div>
 		<div class=""></div>
 	</footer>
-	<script type="text/javascript">
-		function HP() {
-		const currentHealth = <?php echo $health; ?>; // Текущее здоровье
-		const maxHealth = <?php echo $max_health; ?>; // Максимальное здоровье
-
-		const healthBar = document.getElementById('healthBar');
-		const healthText = document.getElementById('healthText');
-
-		const fillWidth = (currentHealth / maxHealth) * 100;
-
-		healthBar.style.setProperty('--fill-width', `${fillWidth}%`); // Уменьшение полоски здоровья
-		healthText.innerText = `${currentHealth}/${maxHealth}`; // Вывод здоровья
-	}
-
-	HP();
-	</script>
 	<script src="assets/JS/fight.js"></script>
 </body>
 </html>
