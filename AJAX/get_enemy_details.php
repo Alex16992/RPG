@@ -8,7 +8,6 @@ $result = mysqli_query($link, $query);
 if ($result) {
     $row = mysqli_fetch_assoc($result);
     $enemys = json_decode($row['enemy'], true);
-    mysqli_free_result($result);
 
     if ($enemys) {
         foreach ($enemys as $enemy) {
@@ -22,13 +21,17 @@ if ($result) {
                 $enemyarmor = round($enemyrow['armor'] * ($enemyLevel / 2) + 1.5);
                 $enemydamage = round($enemyrow['damage'] * ($enemyLevel / 2) + 1.5);
             } else {
-                $enemyarmo = round($enemyrow['armor']);
+                $enemyarmor = round($enemyrow['armor']);
                 $enemydamage = round($enemyrow['damage']);
             }
             
             $enemyname = $enemyrow['name'];
 
             $htmlOutput .= '<h3 class="name">' . $enemyname . '</h3>';
+            $htmlOutput .= '<div class="stats">';
+            $htmlOutput .= '<div class="stats__name">Level</div>';
+            $htmlOutput .= '<div class="stats__value">' . $enemyLevel . '</div>';
+            $htmlOutput .= '</div>';
             $htmlOutput .= '<div class="stats">';
             $htmlOutput .= '<div class="stats__name">Damage</div>';
             $htmlOutput .= '<div class="stats__value">' . $enemydamage . '</div>';

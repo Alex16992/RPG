@@ -2,7 +2,7 @@
 
 <?php
 
-if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Fetch the helmet item from the database
     $query = "SELECT helmet FROM users WHERE id = $userId";

@@ -2,7 +2,6 @@
 
 <?php
 
-$userId = $_SESSION['user_id'];
 $query = "SELECT update_shop, shop, lvl FROM users WHERE id = $userId";
 $result = mysqli_query($link, $query);
 

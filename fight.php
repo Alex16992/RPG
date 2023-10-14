@@ -15,18 +15,25 @@
 	<link rel="stylesheet" type="text/css" href="assets/CSS/fight.css">
 </head>
 <body>
-
 	<main class="main">
 		<div class="PlayerStats" id="PlayerStats">
 			<h3 class="name">
-				<?php echo $login ?>
+				<?php echo $login; ?>
 			</h3>
+			<div class="stats">
+				<div class="stats__name">
+					Level
+				</div>
+				<div class="stats__value">
+					<?php echo $lvl; ?>
+				</div>
+			</div>
 			<div class="stats">
 				<div class="stats__name">
 					Damage
 				</div>
 				<div class="stats__value">
-					<?php echo $damage ?>
+					<?php echo $damage; ?>
 				</div>
 			</div>
 			<div class="stats">
@@ -34,7 +41,7 @@
 					Armor
 				</div>
 				<div class="stats__value">
-					<?php echo $armor ?>
+					<?php echo $armor; ?>
 				</div>
 			</div>
 			<h3 class="passive">
@@ -43,6 +50,7 @@
 		</div>
 		<div class="BattleField">
 			<div class="BattleField__player">
+				<div class="damagePlayer"><span id="damagePlayerText"></span></div>
 				<div class="PlayerHealth" id="PlayerHealth">
 					<span id="PlayerHealthValue"></span>
 				</div>
@@ -50,6 +58,8 @@
 			</div>
 			<div class=""></div>
 			<div class="BattleField__enemy">
+				<div class="damageEnemy"><span id="damageEnemyText"></span></div>
+				
 				<div class="EnemyHealth" id="EnemyHealth">
 					<span id="EnemyHealthValue"></span>
 				</div>
@@ -57,41 +67,19 @@
 			</div>
 		</div>
 		<div class="EnemyStats" id="EnemyStats">
-			<h3 class="name">
-				Rat
-			</h3>
-			<div class="stats">
-				<div class="stats__name">
-					Damage
-				</div>
-				<div class="stats__value">
-					5
-				</div>
-			</div>
-			<h3 class="passive">
-				Passive effects
-			</h3>
-			<div class="stats">
-				<div class="stats__name">
-					Bleeding
-				</div>
-				<div class="stats__value">
-					HP - 3
-				</div>
-			</div>
 		</div>
 	</main>
 	<footer class="footer">
 		<div class=""></div>
 		<div class="footer__button">
-			<p class="footer__button-attack">
+			<p class="footer__button-attack" onclick="checkTurn()">
 				Attack
 			</p>
 			<p class="footer__button-shield">
 				Shield
 			</p>
 			<p class="footer__button-heal">
-				Heal (You have 4)
+				Heal (You have <?php echo $potion; ?>)
 			</p>
 		</div>
 		<div class=""></div>

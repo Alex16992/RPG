@@ -171,7 +171,7 @@ function unequipHelmet() {
         }
     };
 
-    xhr.open('GET', url, true);
+    xhr.open('POST', url, true);
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xhr.send();
 }
@@ -192,7 +192,7 @@ function unequipWeapon_left() {
         }
     };
 
-    xhr.open('GET', url, true);
+    xhr.open('POST', url, true);
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xhr.send();
 }
@@ -213,7 +213,7 @@ function unequipWeapon_right() {
         }
     };
 
-    xhr.open('GET', url, true);
+    xhr.open('POST', url, true);
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xhr.send();
 }

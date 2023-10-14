@@ -30,6 +30,8 @@ if ($result) {
     $combat = $row['combat'];
     $damage = $row['damage'];
     $armor = $row['armor'];
+    $potion = $row['potion'];
+    $turn = $row['turn'];
 }
 
 ?>

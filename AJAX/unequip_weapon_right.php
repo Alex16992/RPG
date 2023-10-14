@@ -2,7 +2,7 @@
 
 <?php
 
-if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Fetch the weapon_right item from the database
     $query = "SELECT weapon_right FROM users WHERE id = $userId";
