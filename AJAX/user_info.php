@@ -32,6 +32,7 @@ if ($result) {
     $armor = $row['armor'];
     $potion = $row['potion'];
     $turn = $row['turn'];
+    $exp = $row['exp'];
 }
 
 ?>

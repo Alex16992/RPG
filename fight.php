@@ -1,5 +1,13 @@
 <? include 'AJAX/user_info.php'; ?>
+<?php
 
+if ($combat == 0) {
+	header("Location: index.php");
+	exit();
+	mysqli_close($link);
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

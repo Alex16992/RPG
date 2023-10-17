@@ -18,8 +18,8 @@ if ($result) {
             $enemyresult = mysqli_query($link, $enemyquery);
             $enemyrow = mysqli_fetch_assoc($enemyresult);
             if ($enemyLevel != 1) {
-                $enemyarmor = round($enemyrow['armor'] * ($enemyLevel / 2) + 1.5);
-                $enemydamage = round($enemyrow['damage'] * ($enemyLevel / 2) + 1.5);
+                $enemyarmor = round($enemyrow['armor'] * $enemyLevel / 1.5);
+                $enemydamage = round($enemyrow['damage'] * $enemyLevel / 1.5);
             } else {
                 $enemyarmor = round($enemyrow['armor']);
                 $enemydamage = round($enemyrow['damage']);

@@ -14,7 +14,7 @@ if ($combat == 1) {
 		</div>
 		<div class="player">
 			<div class="about">
-				<p class="about__level">Level: <?php echo $lvl; ?></p>
+				<p class="about__level">Level: <?php echo $lvl; ?> | Exp: <?php echo $exp; ?> / <?php echo $lvl * 10; ?></p>
 				<p class="about__class"><?php echo $login; ?></p>
 				<a href="logout.php">Logout</a>
 			</div>

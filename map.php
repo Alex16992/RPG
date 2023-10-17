@@ -31,7 +31,7 @@
 					
 				</p>
 				<div class="detail__footer">
-					<a href="" class="detail__footer-start">Start the adventure</a>
+					<p class="detail__footer-start">Start the adventure</p>
 					<!-- <p class="detail__footer-lvl">Recommended level 0-10</p> -->
 				</div>
 			</div>

@@ -11,6 +11,7 @@ if ($result) {
     $row = mysqli_fetch_assoc($result);
     $inventory = json_decode($row['items'], true);
     mysqli_free_result($result);
+    if (is_array($inventory)) {
 
     // Function to compare items by level in descending order
     function compareItems($item1, $item2) {
@@ -19,7 +20,7 @@ if ($result) {
 
     // Sort the inventory using the compareItems function
     usort($inventory, 'compareItems');
-
+    }
     $htmlOutput .= '<h2 class="title">Your inventory | Balance: '.$row["balance"].'</h2>';
     $htmlOutput .= '<div class="inventory-border">';
 

@@ -52,7 +52,7 @@ function startAdventure(locationId){
     xhr.onreadystatechange = function() {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
-                window.location.href = "fight.php";
+                
             } 
             else {
                 console.error('Error:', xhr.status);
@@ -63,6 +63,7 @@ function startAdventure(locationId){
     xhr.open('POST', url, true);
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xhr.send(`locationId=${locationId}`);
+    window.location.href = "fight.php";
 }
 
 

@@ -3,11 +3,17 @@
 <?php
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $query = "SELECT enemy_hp, enemy, turn FROM users WHERE id = $userId";
+    $query = "SELECT health, enemy_hp, enemy, turn FROM users WHERE id = $userId";
     $result = mysqli_query($link, $query);
     $row = mysqli_fetch_assoc($result);
     $enemys = json_decode($row['enemy'], true);
-    if ($row['turn'] == 1) {
+    if ($row['enemy_hp'] <= 0) {
+    	echo 77777;
+    }
+    else if ($row['health'] <= 0) {
+    	echo 66666;
+    }
+    else if ($row['turn'] == 1) {
     	if ($enemys) {
 	        foreach ($enemys as $enemy) {
 	            $enemyId = $enemy[0];
@@ -17,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	            $enemyrow = mysqli_fetch_assoc($enemyresult);
 
 	            if ($enemyLevel != 1) {
-	                $enemyarmor = round($enemyrow['armor'] * ($enemyLevel / 2) + 1.5);
+	                $enemyarmor = round($enemyrow['armor'] * $enemyLevel / 1.5);
 	            } else {
 	                $enemyarmor = round($enemyrow['armor']);
 	            }
@@ -30,7 +36,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	            $resultDamage = round($row['enemy_hp'] - $randomDamageArmor);
 	            $updateQuery = "UPDATE users SET enemy_hp = $resultDamage, turn = 0 WHERE id = $userId";
 	            $updateResult = mysqli_query($link, $updateQuery);
-	            echo $randomDamageArmor;
+	            if ($resultDamage <= 0) {
+	            	echo 77777;
+	            } else {
+	            	echo $randomDamageArmor;
+	            }
 	        }
     	}
     } else {

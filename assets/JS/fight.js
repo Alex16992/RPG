@@ -88,10 +88,16 @@ function playerAttack() {
     xhr.onreadystatechange = function() {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
-                // Call the animation function
                 const damageTextElement = document.getElementById('damageEnemyText');
                 const damage = parseInt(xhr.responseText);
-                if (damage != 0) {
+                console.log (damage);
+                if (damage === 77777) {
+                    window.location.href = 'win.php';
+                }
+                else if (damage === 66666) {
+                    window.location.href = 'die.php';
+                } 
+                else if (damage !== 0) {
                     damageTextElement.innerText = `-${damage}`;
                     damageTextElement.classList.add('damageText');
                     // Remove the damage text after the animation
@@ -126,10 +132,15 @@ function enemyAttack() {
     xhr.onreadystatechange = function() {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
-                // Call the animation function
-
                 const damageTextElement = document.getElementById('damagePlayerText');
                 const damage = parseInt(xhr.responseText);
+                if (damage === 66666) {
+                    window.location.href = 'die.php';
+                } 
+                else if(damage === 77777){
+                    window.location.href = 'win.php';
+                }
+                else {             
                 damageTextElement.innerText = `-${damage}`;
                 damageTextElement.classList.add('damageText');
 
@@ -141,6 +152,7 @@ function enemyAttack() {
 
                 getPlayerHP();
                 enemyDetails();
+                }
             } 
             else {
                 console.error('Error:', xhr.status);
@@ -153,11 +165,41 @@ function enemyAttack() {
     xhr.send();
 }
 
+
+function getDistanceToEnemy() {
+    const playerImage = document.querySelector('.BattleField__player');
+    const enemyElement = document.querySelector('.BattleField__enemy__img');
+    if (!enemyElement) {
+        console.error('Enemy element not found.');
+        return 0;
+    }
+
+    const playerRect = playerImage.getBoundingClientRect();
+    const enemyRect = enemyElement.getBoundingClientRect();
+
+    return enemyRect.left - playerRect.right;
+}
+
+
+function getDistanceToPlayer() {
+    const playerImage = document.querySelector('.BattleField__player__img');
+    const enemyElement = document.querySelector('.BattleField__enemy');
+    if (!playerImage) {
+        console.error('Player element not found.');
+        return 0;
+    }
+
+    const playerRect = playerImage.getBoundingClientRect();
+    const enemyRect = enemyElement.getBoundingClientRect();
+
+    return playerRect.right - enemyRect.left;
+}
+
 function animatePlayerImage() {
     const playerImage = document.querySelector('.BattleField__player');
     let currentPosition = 0;
     let direction = 1; // 1 for moving right, -1 for moving left
-    const targetPosition = 300;  // Desired distance to move
+    const targetPosition = getDistanceToEnemy();  // Desired distance to move
     const animationSpeed = 5;    // Speed of the animation
     let animationRunning = true; // Flag to control animation
 
@@ -171,7 +213,7 @@ function animatePlayerImage() {
         if ((direction === 1 && currentPosition >= targetPosition) || (direction === -1 && currentPosition <= 0)) {
             // Change direction to move in the opposite direction
             direction *= -1;
-            if (currentPosition == targetPosition) {
+            if (direction === -1) {
                 playerAttack();
                 enemyDamageAnimation();
             }
@@ -222,8 +264,8 @@ function animateEnemyImage() {
     const playerImage = document.querySelector('.BattleField__enemy');
     let currentPosition = 0;
     let direction = -1; // 1 for moving right, -1 for moving left
-    const targetPosition = -300;  // Desired distance to move
-    let currentSpeed = 5;    // Speed of the animation
+    const targetPosition = getDistanceToPlayer();  // Desired distance to move
+    let currentSpeed = 6;    // Speed of the animation
     let animationRunning = true; // Flag to control animation
 
     function animate() {
@@ -240,7 +282,7 @@ function animateEnemyImage() {
             // Gradually reduce speed to make the transition smooth
             currentSpeed = Math.max(currentSpeed - 0.1, 0.1);
 
-            if (currentPosition === targetPosition) {
+            if (direction === 1) {
                 enemyAttack();
                 playerDamageAnimation();
             }

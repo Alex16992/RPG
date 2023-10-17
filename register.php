@@ -148,22 +148,18 @@ mysqli_close($link);
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$("#register-form").submit(function(event) {
-            event.preventDefault(); // Предотвращаем отправку формы по умолчанию
-
-            // Собираем данные из формы
+            event.preventDefault(); 
             var formData = $(this).serialize();
 
             $.ajax({
-                type: "POST", // Метод запроса
-                url: "register.php", // URL-адрес обработчика PHP
-                data: formData, // Данные из формы
+                type: "POST",
+                url: "register.php",
+                data: formData,
                 success: function(response) {
-                    // Обработка успешного ответа от сервера
                 	$("#err").html(response);
                 },
                 error: function(xhr, textStatus, errorThrown) {
-                    // Обработка ошибок
-                	console.error("Ошибка при выполнении запроса: " + errorThrown);
+                	console.error("Error: " + errorThrown);
                 }
             });
             grecaptcha.reset();
