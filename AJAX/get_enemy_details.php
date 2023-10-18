@@ -1,12 +1,7 @@
 <?php include 'user_info.php'; ?>
 
 <?php
-
-$query = "SELECT enemy FROM users WHERE id = $userId";
-$result = mysqli_query($link, $query);
-
 if ($result) {
-    $row = mysqli_fetch_assoc($result);
     $enemys = json_decode($row['enemy'], true);
 
     if ($enemys) {

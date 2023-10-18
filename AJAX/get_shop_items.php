@@ -2,13 +2,8 @@
 
 <?php
 
-$query = "SELECT update_shop, shop, lvl FROM users WHERE id = $userId";
-$result = mysqli_query($link, $query);
-
 if ($result) {
     $currentTimestamp = $_SERVER['REQUEST_TIME'];
-
-    $row = mysqli_fetch_assoc($result);
     $updateShopTimestamp = strtotime($row['update_shop']);
     $shopData = json_decode($row['shop'], true);
 

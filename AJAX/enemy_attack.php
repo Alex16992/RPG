@@ -3,9 +3,6 @@
 <?php
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $query = "SELECT health, armor, enemy_hp, enemy FROM users WHERE id = $userId";
-    $result = mysqli_query($link, $query);
-    $row = mysqli_fetch_assoc($result);
     $enemys = json_decode($row['enemy'], true);
     if ($row['health'] <= 0) {
         echo 66666;
@@ -15,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo 77777;
         exit();
     }
-    else if ($enemys) {
+    else if ($row['turn'] == 0) {
         foreach ($enemys as $enemy) {
             $enemyId = $enemy[0];
             $enemyLevel = $enemy[1];
@@ -24,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $enemyrow = mysqli_fetch_assoc($enemyresult);
             $enemydamage = round($enemyrow['damage'] * $enemyLevel / 1.5);
             $randomDamage = rand($enemydamage-1, $enemydamage+2);
-            $randomDamageArmor = rand($randomDamage - $row['armor'], $randomDamage - $row['armor'] / 1.5);
+            $randomDamageArmor = rand($randomDamage - $row['armor'], $randomDamage - $row['armor'] / 2);
             if ($randomDamageArmor <= 0) {
             	$randomDamageArmor = 1;
             }

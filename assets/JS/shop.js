@@ -44,7 +44,7 @@ function showItemDetail(itemId, itemLevel) {
  const detailElement = document.getElementById('detail__item');
  detailElement.style.display = 'grid';
  const xhr = new XMLHttpRequest();
- const url = `AJAX/get_inventory_details_shop.php?itemId=${itemId}`;
+ const url = `AJAX/get_item_details.php?itemId=${itemId}`;
 
  xhr.onreadystatechange = function() {
     if (xhr.readyState === XMLHttpRequest.DONE) {

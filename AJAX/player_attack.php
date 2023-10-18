@@ -3,9 +3,6 @@
 <?php
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $query = "SELECT health, enemy_hp, enemy, turn FROM users WHERE id = $userId";
-    $result = mysqli_query($link, $query);
-    $row = mysqli_fetch_assoc($result);
     $enemys = json_decode($row['enemy'], true);
     if ($row['enemy_hp'] <= 0) {
     	echo 77777;

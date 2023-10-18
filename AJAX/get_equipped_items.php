@@ -1,16 +1,6 @@
+<?php include 'user_info.php'; ?>
+
 <?php
-// Connect to database
-$link = mysqli_connect("localhost", "username", "password", "rpg");
-
-// Check the connection
-if ($link === false) {
-    die("ERROR: Could not connect. " . mysqli_connect_error());
-}
-
-// Retrieve equipped items for the user
-$userId = $_SESSION['user_id'];
-$query = "SELECT helmet, jewelry_left, jewelry_right, weapon_left, body, weapon_right FROM users WHERE id = $userId";
-$result = mysqli_query($link, $query);
 
 if ($result) {
     $equippedItems = mysqli_fetch_assoc($result);

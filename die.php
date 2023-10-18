@@ -60,8 +60,5 @@ if ($combat == 0) {
 			?>
 		</div>
 	</main>
-	<footer class="footer">
-
-	</footer>
 </body>
 </html>

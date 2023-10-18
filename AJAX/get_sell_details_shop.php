@@ -4,7 +4,6 @@
 
 $itemId = $_GET['itemId'];
 
-// Fetch item information based on itemId from the database
 $query = "SELECT * FROM items WHERE id = $itemId";
 $result = mysqli_query($link, $query);
 

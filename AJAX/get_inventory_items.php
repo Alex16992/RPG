@@ -2,13 +2,7 @@
 
 <?php
 
-$userId = $_SESSION['user_id'];
-
-$query = "SELECT items, balance FROM users WHERE id = $userId";
-$result = mysqli_query($link, $query);
-
 if ($result) {
-    $row = mysqli_fetch_assoc($result);
     $inventory = json_decode($row['items'], true);
     mysqli_free_result($result);
     if (is_array($inventory)) {
@@ -21,7 +15,7 @@ if ($result) {
     // Sort the inventory using the compareItems function
     usort($inventory, 'compareItems');
     }
-    $htmlOutput .= '<h2 class="title">Your inventory | Balance: '.$row["balance"].'</h2>';
+    $htmlOutput .= '<h2 class="title">Your inventory | You have: '.$row["balance"].' coins</h2>';
     $htmlOutput .= '<div class="inventory-border">';
 
     if ($inventory) {

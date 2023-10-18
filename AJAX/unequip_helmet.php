@@ -3,13 +3,7 @@
 <?php
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-    // Fetch the helmet item from the database
-    $query = "SELECT helmet FROM users WHERE id = $userId";
-    $result = mysqli_query($link, $query);
-
     if ($result) {
-        $row = mysqli_fetch_assoc($result);
         $helmetItem = json_decode($row['helmet'], true);
 
         // Use the values from the helmet item

@@ -2,13 +2,7 @@
 
 <?php
 
-$userId = $_SESSION['user_id'];
-
-$query = "SELECT items, balance FROM users WHERE id = $userId";
-$result = mysqli_query($link, $query);
-
 if ($result) {
-    $row = mysqli_fetch_assoc($result);
     $inventory = json_decode($row['items'], true);
     mysqli_free_result($result);
 

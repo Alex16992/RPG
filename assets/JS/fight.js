@@ -333,7 +333,7 @@ let lastCheckTime = 0;
 function checkTurn() {
     const currentTime = new Date().getTime();
 
-    if (currentTime - lastCheckTime >= 2000) {
+    if (currentTime - lastCheckTime >= 2500) {
         lastCheckTime = currentTime;
 
         const xhr = new XMLHttpRequest();
