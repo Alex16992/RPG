@@ -71,27 +71,41 @@ if ($combat == 0) {
 				<div class="EnemyHealth" id="EnemyHealth">
 					<span id="EnemyHealthValue"></span>
 				</div>
-				<img src="assets/Image/Enemy/rat.png" alt="" class="BattleField__enemy__img">
+				<?php
+				$enemys = json_decode($row['enemy'], true);
+
+				if ($enemys) {
+					foreach ($enemys as $enemy) {
+						$enemyId = $enemy[0];
+						$enemyquery = "SELECT image FROM enemy WHERE id='$enemyId'";
+						$enemyresult = mysqli_query($link, $enemyquery);
+						$enemyrow = mysqli_fetch_assoc($enemyresult);
+						echo '<img src="assets/Image/Enemy/'. $enemyrow['image'] .'" alt="" class="BattleField__enemy__img">
+						</div>';
+						mysqli_close($link);
+					}
+				}
+				?>
+				
 			</div>
-		</div>
-		<div class="EnemyStats" id="EnemyStats">
-		</div>
-	</main>
-	<footer class="footer">
-		<div class=""></div>
-		<div class="footer__button">
-			<p class="footer__button-attack" onclick="checkTurn()">
-				Attack
-			</p>
-			<p class="footer__button-shield">
-				Shield
-			</p>
-			<p class="footer__button-heal">
-				Heal (You have <?php echo $potion; ?>)
-			</p>
-		</div>
-		<div class=""></div>
-	</footer>
-	<script src="assets/JS/fight.js"></script>
-</body>
-</html>
+			<div class="EnemyStats" id="EnemyStats">
+			</div>
+		</main>
+		<footer class="footer">
+			<div class=""></div>
+			<div class="footer__button">
+				<p class="footer__button-attack" onclick="checkTurn()">
+					Attack
+				</p>
+				<p class="footer__button-shield">
+					Shield
+				</p>
+				<p class="footer__button-heal">
+					Heal (You have <?php echo $potion; ?>)
+				</p>
+			</div>
+			<div class=""></div>
+		</footer>
+		<script src="assets/JS/fight.js"></script>
+	</body>
+	</html>

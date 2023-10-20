@@ -3,6 +3,7 @@
 			<a href="index.php"><span class="icon"  id="update"><img src="assets/Image/Interface/update.png" alt="update" class="icon_image"></span></a>
 			<a href="inventory.php"><span class="icon"  id="inventory_icon"><img src="assets/Image/Interface/inventory.png" alt="inventory" class="icon_image"></span></a>
 			<a href="shop.php"><span class="icon" id="shop"><img src="assets/Image/Interface/shop.png" alt="shop" class="icon_image"></span></a>
+			<a href="potion.php"><span class="icon" id="potion_icon"><img src="assets/Image/Interface/potion.png" alt="shop" class="icon_image"></span></a>
 			<!-- <a href="quests.php"><span class="icon" id="quest"><img src="assets/Image/Interface/quest.png" alt="quest" class="icon_image"></span></a>
 			<a href="friends.php"><span class="icon" id="friends"><img src="assets/Image/Interface/friends.png" alt="friends" class="icon_image"></span></a> -->
 			<a href="map.php"><span class="icon" id="map"><img src="assets/Image/Interface/map.png" alt="map" class="icon_image"></span></a>

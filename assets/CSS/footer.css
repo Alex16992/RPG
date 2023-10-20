@@ -1,7 +1,7 @@
 footer{
   max-height: 15%;
   display: grid;
-  padding-bottom: 1%;
+  margin: 1% 0;
 }
 
 .icon{
@@ -10,7 +10,7 @@ footer{
 
 .icons{
   display: grid;
-  grid-template-columns: repeat(4, 6.5%);
+  grid-template-columns: repeat(5, 6.5%);
   width: 100%;
   height: auto;
 }

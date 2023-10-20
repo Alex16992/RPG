@@ -48,13 +48,12 @@ h3{
 	background-size: cover;
 	display: grid;
 	height: 100%;
-	grid-template-columns: 3fr 1fr 3fr;
+	grid-template-columns: 3fr 200px 3fr;
 	align-content: end;
 }
 
 .BattleField__player{
 	display: grid;
-	height: 100%;
 	align-self: end;
 	align-content: end;
 }
@@ -64,7 +63,10 @@ h3{
 }
 
 .BattleField__player__img{
-	width: 50%;
+	width: auto; /* Сохраняет пропорции изображения, не растягивая */
+  	max-width: 100%; /* Ограничивает максимальную ширину до 100% родительского элемента */
+  	height: auto;
+  	max-height: 100%;
 	justify-self: center;
 	align-self: end;
 }
@@ -74,14 +76,16 @@ h3{
 }
 
 .BattleField__enemy__img{
-	width: 30%;
+  	width: auto; /* Сохраняет пропорции изображения, не растягивая */
+  	max-width: 100%; /* Ограничивает максимальную ширину до 100% родительского элемента */
+  	height: auto;
+  	max-height: 100%;
 	justify-self: center;
 	align-self: end;
 }
 
 .BattleField__enemy{
 	display: grid;
-	height: 100%;
 	align-self: end;
 	align-content: end;
 }
@@ -89,11 +93,11 @@ h3{
 .PlayerHealth {
 	width: 55%;
 	height: 35px;
+	margin-bottom: 20px;
 	border: 6px solid #fff;
 	color: #878787;
 	position: relative;
 	overflow: hidden;
-	margin-bottom: 20px;
 }
 
 .PlayerHealth span {
@@ -117,6 +121,7 @@ h3{
 .EnemyHealth {
 	width: 55%;
 	height: 35px;
+	margin-bottom: 20px;
 	border: 6px solid #fff;
 	color: #878787;
 	position: relative;

@@ -34,7 +34,7 @@ if ($result) {
         for ($i = 0; $i < 10; $i++) {
             $randomIndex = array_rand($randomItemIds);
             $randomItemId = $randomItemIds[$randomIndex];
-            $randomItemLevel = rand($row['lvl']-3, $row['lvl']+3);
+            $randomItemLevel = rand($lvl-3, $lvl+3);
             if ($randomItemLevel <= 0) {
                 $randomItemLevel = 1;
             }

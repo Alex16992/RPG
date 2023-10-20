@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $enemyrow = mysqli_fetch_assoc($enemyresult);
             $enemydamage = round($enemyrow['damage'] * $enemyLevel / 1.5);
             $randomDamage = rand($enemydamage-1, $enemydamage+2);
-            $randomDamageArmor = rand($randomDamage - $row['armor'], $randomDamage - $row['armor'] / 2);
+            $randomDamageArmor = rand($randomDamage - $row['armor'], $randomDamage - $row['armor'] / 3);
             if ($randomDamageArmor <= 0) {
             	$randomDamageArmor = 1;
             }

@@ -5,10 +5,10 @@ body {
 	color: #fff;
 	font-family: 'Jomhuria', cursive;
 	font-size: 2.5vw;
-	padding: 40px;
+	padding: 2%;
 	line-height: 65%;
 }
-
+	
 .scrollbar {
   scrollbar-color: #fff #191919;
   scrollbar-width: thin;
@@ -91,6 +91,7 @@ h4 {
 
 .about {
 	margin-right: 20px;
+	text-align: right;
 }
 
 .player__avatar {

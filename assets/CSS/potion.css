@@ -1,0 +1,72 @@
+.main{
+	display: grid;
+	grid-template-columns: 1fr 2fr 1.2fr 1fr;
+	grid-template-rows: 90%;
+	margin-top: 1%;
+	margin-bottom: 1%;
+	height: 70%;
+}
+
+.inventory-border{
+	border: 5px solid #fff;
+	height: 100%;
+	padding: 20px;
+	overflow: auto;
+	scrollbar-color: #fff #000;
+	scrollbar-width: thin;
+}
+
+.inventory__item{
+	padding: 10px 0;
+	display: grid;
+	grid-template-columns: 10% 60% 30%;
+}
+
+.inventory__item:first-child{
+	padding: 0;
+}
+
+.inventory__item-image{
+	width: 100%;
+}
+
+.inventory__item-about{
+	margin-top: 5px;
+	margin-left: 12px;
+	align-self: center;
+}
+
+.potion-border{
+	border: 5px solid #fff;
+	height: 100%;
+	padding: 20px;
+	overflow: auto;
+	scrollbar-color: #fff #000;
+	scrollbar-width: thin;
+}
+
+.potion{
+	min-height: 100%;
+}
+
+.potion__craft-button {
+    background-color: transparent;
+    border: 5px solid white;
+    padding: 3% 1% 1%;
+    margin: 2% 0 5% 0;
+    color: white;
+    height: 100%;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.potion__craft-button:last-child {
+	padding: 3% 0 0;
+}
+
+.potion__craft-button:hover {
+	cursor: pointer;
+}
