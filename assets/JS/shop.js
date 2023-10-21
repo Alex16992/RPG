@@ -88,7 +88,7 @@ function showItemDetail(itemId, itemLevel) {
 
 
             detailItemSlot.textContent = "Slot: " + selectedItem.slot;
-            detailItemPrice.textContent = "Price: " + Math.round((selectedItem.price * (itemLevel / 2) + 2)) + " coins";
+            detailItemPrice.textContent = "Price: " + Math.round((selectedItem.price * (itemLevel / 2))) + " coins";
         } 
         else {
            console.error('Error:', xhr.status);
@@ -149,7 +149,7 @@ function showSellItemDetail(itemId, itemLevel) {
 
 
             detailItemSlot.textContent = "Slot: " + selectedItem.slot;
-            detailItemPrice.textContent = "Price: " + Math.round((selectedItem.price * (itemLevel) + 2)) + " coins";
+            detailItemPrice.textContent = "Price: " + Math.round((selectedItem.price * (itemLevel))) + " coins";
         } 
         else {
            console.error('Error:', xhr.status);

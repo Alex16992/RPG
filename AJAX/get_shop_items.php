@@ -16,7 +16,7 @@ if ($result) {
 
     $randomItemIds = array();
 
-    for ($i = 0; $i < 10; $i++) {
+    for ($i = 0; $i < 15; $i++) {
         $query = "SELECT id FROM items ORDER BY RAND() LIMIT 1";
         $result = mysqli_query($link, $query);
 
@@ -31,7 +31,7 @@ if ($result) {
     if ($updateShopTimestamp === null || $currentTimestamp >= $updateShopTimestamp) {
         $shopData = [];
 
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 15; $i++) {
             $randomIndex = array_rand($randomItemIds);
             $randomItemId = $randomItemIds[$randomIndex];
             $randomItemLevel = rand($lvl-3, $lvl+3);

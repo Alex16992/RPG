@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $itemPricequery = "SELECT price FROM items WHERE id = $itemId";
             $itemPriceresult = mysqli_query($link, $itemPricequery);
             $itemPrice = mysqli_fetch_assoc($itemPriceresult);
-            $price = round($itemPrice['price'] * ($lvl / 2) + 2);
+            $price = round($itemPrice['price'] * ($lvl / 2));
             $query = "UPDATE users SET balance = balance + $price WHERE id = $userId";
 
             $result = mysqli_query($link, $query);

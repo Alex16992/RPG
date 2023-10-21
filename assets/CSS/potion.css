@@ -23,7 +23,7 @@
 }
 
 .inventory__item:first-child{
-	padding: 0;
+	padding: 0 0 10px 0;
 }
 
 .inventory__item-image{

@@ -26,7 +26,7 @@
 					<p class="potion__craft-text">
 						Craft 1 potion<br>You need 2 Herbs 1 lvl
 					</p>
-					<p class="potion__craft-button">
+					<p class="potion__craft-button" onclick="craftPotion();">
 						Craft
 					</p>
 				</div>
