@@ -33,7 +33,7 @@
 				<div class="potion__craft">
 					<p class="potion__craft-text">
 						Upgrade potions<br>
-						For <?php echo (20 * $row['potion_lvl']); ?> coins<br>
+						For <?php echo (30 * $row['potion_lvl']); ?> coins<br>
 						You lose all potions
 					</p>
 					<p class="potion__craft-button" onclick="upgradePotion();">
@@ -46,7 +46,7 @@
 						Lvl - 1<br>
 						Price - 10 coins
 					</p>
-					<p class="potion__craft-button">
+					<p class="potion__craft-button" onclick="sellPotion();">
 						Sell 1 potion
 					</p>
 				</div>
@@ -55,7 +55,6 @@
 		<div class=""></div>
 	</main>
 	<? include 'footer.php'; ?>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 	<script src="assets/JS/script.js"></script>
 	<script src="assets/JS/potion.js"></script>
 	<script type="text/javascript">

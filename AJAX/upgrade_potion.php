@@ -3,7 +3,7 @@
 <?php
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $potionPrice = 20 * $row['potion_lvl'];
+    $potionPrice = 30 * $row['potion_lvl'];
     if ($row['balance'] >= $potionPrice) {
         $newPotionLvl = $row['potion_lvl'] + 1;
         $newBalance = $row['balance'] - $potionPrice;
