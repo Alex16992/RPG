@@ -72,22 +72,32 @@ function showItemDetail(itemId, itemLevel) {
             detailItemLevel.textContent = "Level - " + itemLevel;
             detailItemDescription.textContent = selectedItem.description;
             detailBuysell.textContent = "Sell";
-            if (itemLevel > 1) {
-                if (selectedItem.armor != null) {
-                    detailItemDamage.textContent = "Armor: " + Math.round(selectedItem.armor * (itemLevel / 2) + 2);
-                } else if (selectedItem.damage != null) {
-                    detailItemDamage.textContent = "Damage: " + Math.round(selectedItem.damage * (itemLevel / 2) + 2);
-                }
+            if (selectedItem.armor == null & selectedItem.damage == null) {
+                detailItemDamage.textContent = "";
+                detailItemDamage.textContent = "";
             } else {
-                if (selectedItem.armor != null) {
-                    detailItemDamage.textContent = "Armor: " + Math.round(selectedItem.armor);
-                } else if (selectedItem.damage != null) {
-                    detailItemDamage.textContent = "Damage: " + Math.round(selectedItem.damage);
+                    if (itemLevel > 1) {
+                    if (selectedItem.armor != null) {
+                        detailItemDamage.textContent = "Armor: " + Math.round(selectedItem.armor * (itemLevel / 2) + 2);
+                    } else if (selectedItem.damage != null) {
+                        detailItemDamage.textContent = "Damage: " + Math.round(selectedItem.damage * (itemLevel / 2) + 2);
+                    }
+                } else {
+                    if (selectedItem.armor != null) {
+                        detailItemDamage.textContent = "Armor: " + Math.round(selectedItem.armor);
+                    } else if (selectedItem.damage != null) {
+                        detailItemDamage.textContent = "Damage: " + Math.round(selectedItem.damage);
+                    }
                 }
             }
+            
 
-
-            detailItemSlot.textContent = "Slot: " + selectedItem.slot;
+            //Get price using my formula
+            if (selectedItem.slot != null) {
+                detailItemSlot.textContent = "Slot: " + selectedItem.slot;
+            } else {
+                detailItemSlot.textContent = "";
+            }
             detailItemPrice.textContent = "Price: " + Math.round((selectedItem.price * (itemLevel / 2))) + " coins";
         } 
         else {
@@ -133,22 +143,32 @@ function showSellItemDetail(itemId, itemLevel) {
             detailItemLevel.textContent = "Level - " + itemLevel;
             detailItemDescription.textContent = selectedItem.description;
             detailBuysell.textContent = "Buy";
-            if (itemLevel > 1) {
-                if (selectedItem.armor != null) {
-                    detailItemDamage.textContent = "Armor: " + Math.round(selectedItem.armor * (itemLevel / 2) + 2);
-                } else if (selectedItem.damage != null) {
-                    detailItemDamage.textContent = "Damage: " + Math.round(selectedItem.damage * (itemLevel / 2) + 2);
-                }
+            if (selectedItem.armor == null & selectedItem.damage == null) {
+                detailItemDamage.textContent = "";
+                detailItemDamage.textContent = "";
             } else {
-                if (selectedItem.armor != null) {
-                    detailItemDamage.textContent = "Armor: " + Math.round(selectedItem.armor);
-                } else if (selectedItem.damage != null) {
-                    detailItemDamage.textContent = "Damage: " + Math.round(selectedItem.damage);
+                    if (itemLevel > 1) {
+                    if (selectedItem.armor != null) {
+                        detailItemDamage.textContent = "Armor: " + Math.round(selectedItem.armor * (itemLevel / 2) + 2);
+                    } else if (selectedItem.damage != null) {
+                        detailItemDamage.textContent = "Damage: " + Math.round(selectedItem.damage * (itemLevel / 2) + 2);
+                    }
+                } else {
+                    if (selectedItem.armor != null) {
+                        detailItemDamage.textContent = "Armor: " + Math.round(selectedItem.armor);
+                    } else if (selectedItem.damage != null) {
+                        detailItemDamage.textContent = "Damage: " + Math.round(selectedItem.damage);
+                    }
                 }
             }
+            
 
-
-            detailItemSlot.textContent = "Slot: " + selectedItem.slot;
+            //Get price using my formula
+            if (selectedItem.slot != null) {
+                detailItemSlot.textContent = "Slot: " + selectedItem.slot;
+            } else {
+                detailItemSlot.textContent = "";
+            }
             detailItemPrice.textContent = "Price: " + Math.round((selectedItem.price * (itemLevel))) + " coins";
         } 
         else {

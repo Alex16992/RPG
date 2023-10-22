@@ -21,12 +21,12 @@ function loadInventory() {
 
 //Display information about the selected item
 function showItemDetail(itemId, itemLevel) {
-   const detailElement = document.getElementById('detail__item');
-   detailElement.style.display = 'grid';
-   const xhr = new XMLHttpRequest();
-   const url = `AJAX/get_item_details.php?itemId=${itemId}`;
+ const detailElement = document.getElementById('detail__item');
+ detailElement.style.display = 'grid';
+ const xhr = new XMLHttpRequest();
+ const url = `AJAX/get_item_details.php?itemId=${itemId}`;
 
-   xhr.onreadystatechange = function() {
+ xhr.onreadystatechange = function() {
     if (xhr.readyState === XMLHttpRequest.DONE) {
         if (xhr.status === 200) {
             const selectedItem = JSON.parse(xhr.responseText);
@@ -39,6 +39,7 @@ function showItemDetail(itemId, itemLevel) {
             const detailItemSlot = detailElement.querySelector('.detail__item__footer__stats-slot');
             const detailItemPrice = detailElement.querySelector('.detail__item__footer__stats-price');
             const detailEquip = detailElement.querySelector('.detail__item__footer-equip-image');
+            const detailEquipText = detailElement.querySelector('.detail__item__footer-equip-text');
 
 
             detailItemName.textContent = selectedItem.name;
@@ -50,28 +51,42 @@ function showItemDetail(itemId, itemLevel) {
             detailItemDescription.textContent = selectedItem.description;
 
             //Get damage and armor using my formula
-            if (itemLevel > 1) {
-                if (selectedItem.armor != null) {
-                    detailItemDamage.textContent = "Armor: " + Math.round(selectedItem.armor * (itemLevel / 2) + 2);
-                } else if (selectedItem.damage != null) {
-                    detailItemDamage.textContent = "Damage: " + Math.round(selectedItem.damage * (itemLevel / 2) + 2);
-                }
+            if (selectedItem.armor == null & selectedItem.damage == null) {
+                detailItemDamage.textContent = "";
+                detailItemDamage.textContent = "";
             } else {
-                if (selectedItem.armor != null) {
-                    detailItemDamage.textContent = "Armor: " + Math.round(selectedItem.armor);
-                } else if (selectedItem.damage != null) {
-                    detailItemDamage.textContent = "Damage: " + Math.round(selectedItem.damage);
+                if (itemLevel > 1) {
+                    if (selectedItem.armor != null) {
+                        detailItemDamage.textContent = "Armor: " + Math.round(selectedItem.armor * (itemLevel / 2) + 2);
+                    } else if (selectedItem.damage != null) {
+                        detailItemDamage.textContent = "Damage: " + Math.round(selectedItem.damage * (itemLevel / 2) + 2);
+                    }
+                } else {
+                    if (selectedItem.armor != null) {
+                        detailItemDamage.textContent = "Armor: " + Math.round(selectedItem.armor);
+                    } else if (selectedItem.damage != null) {
+                        detailItemDamage.textContent = "Damage: " + Math.round(selectedItem.damage);
+                    }
                 }
             }
+            
 
             //Get price using my formula
-            detailItemSlot.textContent = "Slot: " + selectedItem.slot;
+            if (selectedItem.slot != null) {
+                detailItemSlot.textContent = "Slot: " + selectedItem.slot;
+                detailEquip.style.display = 'block';
+                detailEquipText.style.display = 'block';
+            } else {
+                detailItemSlot.textContent = "";
+                detailEquip.style.display = 'none';
+                detailEquipText.style.display = 'none';
+            }
             detailItemPrice.textContent = "Price: " + Math.round((selectedItem.price * (itemLevel / 2) + 2)) + " coins";
         } 
         else {
-         console.error('Error:', xhr.status);
-     }
- }
+           console.error('Error:', xhr.status);
+       }
+    }
 };
 
 xhr.open('GET', url, true);
@@ -175,6 +190,29 @@ function unequipHelmet() {
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xhr.send();
 }
+
+
+function unequipBody() {
+    const xhr = new XMLHttpRequest();
+    const url = 'AJAX/unequip_body.php';
+
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                updateItems();
+                loadInventory();
+                updateChar();
+            } else {
+                console.error('Error:', xhr.status);
+            }
+        }
+    };
+
+    xhr.open('POST', url, true);
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhr.send();
+}
+
 
 function unequipWeapon_left() {
     const xhr = new XMLHttpRequest();

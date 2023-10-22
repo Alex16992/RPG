@@ -13,7 +13,7 @@
 	<link rel="stylesheet" type="text/css" href="assets/CSS/shop.css">
 </head>
 <body>
-<? include 'header.php'; ?>
+<?php include 'header.php'; ?>
 
 	<main class="main">
 		<div id="inventory" class="inventory">
@@ -62,7 +62,7 @@
 			
 		</div>
 	</main>
-<? include 'footer.php'; ?>
+<?php include 'footer.php'; ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 	<script src="assets/JS/script.js"></script>
 	<script src="assets/JS/shop.js"></script>

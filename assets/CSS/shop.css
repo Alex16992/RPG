@@ -147,6 +147,10 @@
 	width: 30%;
 }
 
+.detail__item__footer-buysell-text{
+	text-align: center;
+}
+
 .inventory__item-detail:hover{
 	cursor: pointer;
 }
@@ -158,7 +162,7 @@
 .detail__item__footer-equip-image{
 	justify-self: center;
 	align-self: end;
-	width: 95%;
+	width: 100%;
 }
 
 .detail__item__footer-equip-image:hover{

@@ -1,4 +1,4 @@
-<? include 'AJAX/user_info.php'; ?>
+<?php include 'AJAX/user_info.php'; ?>
 
 <?php
 

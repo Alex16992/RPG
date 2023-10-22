@@ -34,7 +34,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     } else if ($row['weapon_right'] == null) {
                         $query = "UPDATE users SET weapon_right = '$itemUpdate' WHERE id = $userId";
                     }
-                }
+                } else if ($slot == "body" && $row['body'] == null) {
+                    $query = "UPDATE users SET body = '$itemUpdate' WHERE id = $userId";
+                } 
                 $result = mysqli_query($link, $query);
 
                 if ($result) {

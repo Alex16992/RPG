@@ -1,12 +1,14 @@
+let lastCheckTime = 0;
+
 // Get the player health
 function getPlayerHP() {
     const xhr = new XMLHttpRequest();
     const url = `AJAX/get_player_hp.php`;
 
     xhr.onreadystatechange = function() {
-    if (xhr.readyState === XMLHttpRequest.DONE) {
-        if (xhr.status === 200) {
-        	const playerHP = JSON.parse(xhr.responseText);
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+               const playerHP = JSON.parse(xhr.responseText);
 
             const currentHealthPlayer = playerHP.health; // Current health
 			const maxHealthPlayer = playerHP.max_health; // Max health
@@ -21,8 +23,8 @@ function getPlayerHP() {
         } 
         else {
         	console.error('Error:', xhr.status);
-     }
- }
+        }
+    }
 };
 
 xhr.open('GET', url, true);
@@ -36,9 +38,9 @@ function getEnemyHP() {
 	const url = `AJAX/get_enemy_hp.php`;
 
 	xhr.onreadystatechange = function() {
-    if (xhr.readyState === XMLHttpRequest.DONE) {
-        if (xhr.status === 200) {
-        	const enemyHP = JSON.parse(xhr.responseText);
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+               const enemyHP = JSON.parse(xhr.responseText);
 
             const currentHealthEnemy = enemyHP.enemy_hp; // Current health
 			const maxHealthEnemy = enemyHP.enemy_max_hp; // Max health
@@ -52,9 +54,9 @@ function getEnemyHP() {
 			enemyHealthValue.innerText = `${currentHealthEnemy}/${maxHealthEnemy}`;
         } 
         else {
-         console.error('Error:', xhr.status);
-     }
- }
+           console.error('Error:', xhr.status);
+       }
+   }
 };
 
 xhr.open('GET', url, true);
@@ -78,6 +80,66 @@ function enemyDetails() {
     };
     xhr.open('GET', url, true);
     xhr.send();
+}
+
+
+function getPotion() {
+    const xhr = new XMLHttpRequest();
+    const url = 'AJAX/get_potion.php';
+
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                document.getElementById('footer__button-heal').innerHTML = xhr.responseText;
+            } 
+            else {
+                console.error('Error:', xhr.status);
+            }
+        }   
+    };
+    xhr.open('GET', url, true);
+    xhr.send();
+}
+
+
+
+function playerHeal() {
+    const currentTime = new Date().getTime();
+
+    if (currentTime - lastCheckTime >= 2500) {
+        const xhr = new XMLHttpRequest();
+        const url = 'AJAX/player_heal.php';
+        lastCheckTime = currentTime;
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    const healTextElement = document.getElementById('damagePlayerText');
+                    const heal = parseInt(xhr.responseText);
+                    console.log (heal);
+                    if (heal !== 0) {
+                        healTextElement.innerText = `+${heal}`;
+                        healTextElement.classList.add('damageText');
+                        getPotion();
+                    // Remove the damage text after the animation
+                        setTimeout(() => {
+                            healTextElement.innerText = '';
+                            healTextElement.classList.remove('damageText');
+                            animateEnemyImage();
+                        }, 650);
+                        getPlayerHP();
+                    }
+
+                } 
+                else {
+                    console.error('Error:', xhr.status);
+                }
+            }
+        };
+        xhr.open('POST', url, true);
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhr.send();
+    }
+    
 }
 
 
@@ -141,17 +203,17 @@ function enemyAttack() {
                     window.location.href = 'win.php';
                 }
                 else {             
-                damageTextElement.innerText = `-${damage}`;
-                damageTextElement.classList.add('damageText');
+                    damageTextElement.innerText = `-${damage}`;
+                    damageTextElement.classList.add('damageText');
 
                 // Remove the damage text after the animation
-                setTimeout(() => {
-                    damageTextElement.innerText = '';
-                    damageTextElement.classList.remove('damageText');
-                }, 650);
+                    setTimeout(() => {
+                        damageTextElement.innerText = '';
+                        damageTextElement.classList.remove('damageText');
+                    }, 650);
 
-                getPlayerHP();
-                enemyDetails();
+                    getPlayerHP();
+                    enemyDetails();
                 }
             } 
             else {
@@ -328,7 +390,6 @@ function playerDamageAnimation() {
     requestAnimationFrame(animate);
 }
 
-let lastCheckTime = 0;
 
 function checkTurn() {
     const currentTime = new Date().getTime();

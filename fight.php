@@ -1,4 +1,4 @@
-<? include 'AJAX/user_info.php'; ?>
+<?php include 'AJAX/user_info.php'; ?>
 <?php
 
 if ($combat == 0) {
@@ -97,10 +97,7 @@ if ($combat == 0) {
 				<p class="footer__button-attack" onclick="checkTurn()">
 					Attack
 				</p>
-				<p class="footer__button-shield">
-					Shield
-				</p>
-				<p class="footer__button-heal">
+				<p class="footer__button-heal" id="footer__button-heal" onclick="playerHeal()">
 					Heal (You have <?php echo $potion; ?>)
 				</p>
 			</div>

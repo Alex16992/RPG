@@ -13,7 +13,7 @@
 	<link rel="stylesheet" type="text/css" href="assets/CSS/friends.css">
 </head>
 <body>
-<? include 'header.php'; ?>
+<?php include 'header.php'; ?>
 	<main class="main">
 		<div class=""></div>
 		<div class="requests">
@@ -101,7 +101,7 @@
 			</div>
 		</div>
 	</main>
-<? include 'footer.php'; ?>
+<?php include 'footer.php'; ?>
 	<script src="assets/JS/script.js"></script>
 		<script type="text/javascript">
 		document.addEventListener('DOMContentLoaded', function() {

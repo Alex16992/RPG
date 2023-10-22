@@ -18,6 +18,26 @@ function loadInventory() {
 }
 
 
+//Getting items in the player inventory
+function getPotionInfo() {
+    const xhr = new XMLHttpRequest();
+    const url = 'AJAX/get_potion_info.php';
+
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                document.getElementById('potionDetail').innerHTML = xhr.responseText;
+            } 
+            else {
+                console.error('Error:', xhr.status);
+            }
+        }   
+    };
+    xhr.open('GET', url, true);
+    xhr.send();
+}
+
+
 function upgradePotion(){
     const xhr = new XMLHttpRequest();
     const url = 'AJAX/upgrade_potion.php';
@@ -26,6 +46,7 @@ function upgradePotion(){
         if (xhr.readyState === XMLHttpRequest.DONE){
             if (xhr.status === 200){
                 loadInventory();
+                getPotionInfo();
             }
             else {
                 console.error('Error:', xhr.status);
@@ -46,6 +67,7 @@ function craftPotion(){
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
                 loadInventory();
+                getPotionInfo();
             }
             else {
                 console.error('Error:', xhr.status);
@@ -66,6 +88,7 @@ function sellPotion(){
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
                 loadInventory();
+                getPotionInfo();
             }
             else {
                 console.error('Error:', xhr.status);
@@ -79,3 +102,4 @@ function sellPotion(){
 }
 
 loadInventory();
+getPotionInfo();

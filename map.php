@@ -37,7 +37,7 @@
 			</div>
 		</div>
 	</main>
-	<? include 'footer.php'; ?>
+	<?php include 'footer.php'; ?>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 	<script src="assets/JS/script.js"></script>
 	<script src="assets/JS/map.js"></script>

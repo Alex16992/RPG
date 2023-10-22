@@ -29,7 +29,7 @@
 				<p id="helmet_lvl"><img src="" alt="" id="helmet" onclick="unequipHelmet()"></p>
 				<p id="jewelry_right_lvl"><img src="" alt="" id="jewelry_right"></p>
 				<p id="weapon_left_lvl"><img src="" alt="" id="weapon_left" onclick="unequipWeapon_left()"></p>
-				<p id="body_lvl"><img src="" alt="" id="body"></p>
+				<p id="body_lvl"><img src="" alt="" id="body" onclick="unequipBody()"></p>
 				<p id="weapon_right_lvl"><img src="" alt="" id="weapon_right" onclick="unequipWeapon_right()"></p>
 			</div>
 		</div>
@@ -68,7 +68,7 @@
 							</div>
 						</div>
 						<div class="detail__item__footer-equip">
-							<p>Equip</p>
+							<p class="detail__item__footer-equip-text">Equip</p>
 							<img src="assets/Image/Interface/Equip.png" alt="Equip" class="detail__item__footer-equip-image">
 						</div>
 					</div>
@@ -76,7 +76,7 @@
 			</div>
 		</div>
 	</main>
-	<? include 'footer.php'; ?>
+	<?php include 'footer.php'; ?>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 	<script src="assets/JS/script.js"></script>
 	<script src="assets/JS/inventory.js"></script>

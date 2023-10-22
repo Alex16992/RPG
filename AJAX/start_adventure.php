@@ -31,7 +31,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 
                 $query = "UPDATE users SET combat = 1, location = '$locationId', enemy = '$updatedEnemyData', enemy_hp = '$enemyHP', enemy_max_hp = '$enemyHP', turn = 1 WHERE id = $userId";
                 $result = mysqli_query($link, $query);
-                echo '<script>window.location.href = "../fight.php";</script>';
             } else {
                 echo "Error: " . mysqli_error($link);
             }
