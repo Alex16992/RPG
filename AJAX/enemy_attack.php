@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         foreach ($enemys as $enemy) {
             $enemyId = $enemy[0];
             $enemyLevel = $enemy[1];
-            $enemyquery = "SELECT damage FROM enemy WHERE id='$enemyId'";
+            $enemyquery = "SELECT damage, crit FROM enemy WHERE id='$enemyId'";
             $enemyresult = mysqli_query($link, $enemyquery);
             $enemyrow = mysqli_fetch_assoc($enemyresult);
             $enemydamage = round($enemyrow['damage'] * $enemyLevel / 1.5);
@@ -25,13 +25,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if ($randomDamageArmor <= 0) {
             	$randomDamageArmor = 1;
             }
+            $critChance = $enemyrow['crit'];
+            $randomNumber = rand(1, 100);
+            if ($randomNumber <= $critChance) {
+                $randomDamageArmor = $randomDamageArmor * 2;
+            }
             $resultDamage = round($row['health'] - $randomDamageArmor);
             $updateQuery = "UPDATE users SET health = $resultDamage, turn = 1 WHERE id = $userId";
             $updateResult = mysqli_query($link, $updateQuery);
             if ($resultDamage <= 0) {
                 echo 66666;
+            } else if ($randomNumber <= $critChance) {
+                echo "CRIT! -" . $randomDamageArmor;
             } else {
-                echo $randomDamageArmor;
+                echo "-" . $randomDamageArmor;
             }
         }
     }

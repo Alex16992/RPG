@@ -23,6 +23,9 @@
 				<p class="equipped_stats-damage" id="equipped_stats-damage">
 					
 				</p>
+				<p class="equipped_stats-crit" id="equipped_stats-crit">
+					
+				</p>
 			</div>
 			<div class="equipped_items">
 				<p id="jewelry_left_lvl"><img src="" alt="" id="jewelry_left"></p>
@@ -58,6 +61,9 @@
 					<div class="detail__item__footer">
 						<div class="detail__item__footer__stats">
 							<div class="detail__item__footer__stats-main">
+
+							</div>
+							<div class="detail__item__footer__stats-crit">
 
 							</div>
 							<div class="detail__item__footer__stats-slot">

@@ -151,16 +151,16 @@ function playerAttack() {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
                 const damageTextElement = document.getElementById('damageEnemyText');
-                const damage = parseInt(xhr.responseText);
+                const damage = xhr.responseText;
                 console.log (damage);
-                if (damage === 77777) {
+                if (damage == 77777) {
                     window.location.href = 'win.php';
                 }
-                else if (damage === 66666) {
+                else if (damage == 66666) {
                     window.location.href = 'die.php';
                 } 
                 else if (damage !== 0) {
-                    damageTextElement.innerText = `-${damage}`;
+                    damageTextElement.innerText = `${damage}`;
                     damageTextElement.classList.add('damageText');
                     // Remove the damage text after the animation
                     setTimeout(() => {
@@ -195,15 +195,15 @@ function enemyAttack() {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
                 const damageTextElement = document.getElementById('damagePlayerText');
-                const damage = parseInt(xhr.responseText);
-                if (damage === 66666) {
+                const damage = xhr.responseText;
+                if (damage == 66666) {
                     window.location.href = 'die.php';
                 } 
-                else if(damage === 77777){
+                else if(damage == 77777){
                     window.location.href = 'win.php';
                 }
                 else {             
-                    damageTextElement.innerText = `-${damage}`;
+                    damageTextElement.innerText = `${damage}`;
                     damageTextElement.classList.add('damageText');
 
                 // Remove the damage text after the animation

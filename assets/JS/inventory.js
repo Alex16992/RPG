@@ -36,6 +36,7 @@ function showItemDetail(itemId, itemLevel) {
             const detailItemLevel = detailElement.querySelector('.detail__item-lvl');
             const detailItemDescription = detailElement.querySelector('.detail__item-description');
             const detailItemDamage = detailElement.querySelector('.detail__item__footer__stats-main');
+            const detailItemCrit = detailElement.querySelector('.detail__item__footer__stats-crit');
             const detailItemSlot = detailElement.querySelector('.detail__item__footer__stats-slot');
             const detailItemPrice = detailElement.querySelector('.detail__item__footer__stats-price');
             const detailEquip = detailElement.querySelector('.detail__item__footer-equip-image');
@@ -80,6 +81,13 @@ function showItemDetail(itemId, itemLevel) {
                 detailItemSlot.textContent = "";
                 detailEquip.style.display = 'none';
                 detailEquipText.style.display = 'none';
+            }
+            if (selectedItem.crit != null) {
+                detailItemCrit.textContent = "Crit: " + selectedItem.crit + "%";
+                detailItemCrit.style.display = 'block';
+            } else {
+                detailItemCrit.textContent = "";
+                detailItemCrit.style.display = 'none';
             }
             detailItemPrice.textContent = "Price: " + Math.round((selectedItem.price * (itemLevel / 2) + 2)) + " coins";
         } 
@@ -159,6 +167,7 @@ function updateChar() {
         success: function(data) {
             $('#equipped_stats-armor').html('Armor: ' + data.armor);
             $('#equipped_stats-damage').html('Damage: ' + data.damage);
+            $('#equipped_stats-crit').html('Crit: ' + data.crit + '%');
         },
 
         error: function(jqXHR, textStatus, errorThrown) {

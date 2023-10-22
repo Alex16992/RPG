@@ -30,13 +30,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	            if ($randomDamageArmor <= 0) {
 	            	$randomDamageArmor = 1;
 	            }
+	            $critChance = $row['crit'];
+				$randomNumber = rand(1, 100);
+				if ($randomNumber <= $critChance) {
+				    $randomDamageArmor = $randomDamageArmor * 2;
+				}
 	            $resultDamage = round($row['enemy_hp'] - $randomDamageArmor);
 	            $updateQuery = "UPDATE users SET enemy_hp = $resultDamage, turn = 0 WHERE id = $userId";
 	            $updateResult = mysqli_query($link, $updateQuery);
 	            if ($resultDamage <= 0) {
 	            	echo 77777;
-	            } else {
-	            	echo $randomDamageArmor;
+	            } else if ($randomNumber <= $critChance) {
+				    echo "CRIT! -" . $randomDamageArmor;
+				} else {
+	            	echo "-" . $randomDamageArmor;
 	            }
 	        }
     	}

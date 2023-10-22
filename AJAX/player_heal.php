@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         $updateQuery = "UPDATE users SET potion = $newPotionCount, health = $newHP, turn = 0 WHERE id = $userId";
         $updateResult = mysqli_query($link, $updateQuery);
-        echo $newHP;
+        echo ($row['potion_lvl'] * 7);
     } else {
         echo 0;
     }
