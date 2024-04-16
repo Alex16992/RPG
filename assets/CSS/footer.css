@@ -1,0 +1,48 @@
+footer{
+  max-height: 15%;
+  display: grid;
+  margin: 1% 0;
+}
+
+.icon{
+  width: 100%;
+}
+
+.icons{
+  display: grid;
+  grid-template-columns: repeat(5, 6.5%);
+  width: 100%;
+  height: auto;
+}
+
+.icon_image{
+  width: 100%;
+  height: auto;
+}
+
+.icons a{
+	margin-right: 15px;
+}
+
+.icon_active {
+  position: relative;
+  display: inline-block;
+}
+
+.icon_active img {
+  position: relative;
+  height: auto;
+}
+
+.icon_active::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 5px solid #FFF; 
+  box-sizing: border-box; 
+  z-index: 2; 
+  width: auto;
+}

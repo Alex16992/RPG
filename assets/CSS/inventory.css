@@ -1,0 +1,160 @@
+.main{
+	display: grid;
+	grid-template-columns: 1fr 2fr 1fr;
+	grid-template-rows: 90%;
+	margin-top: 1%;
+	margin-bottom: 1%;
+	height: 70%;
+}
+
+.equipped{
+	display: grid;
+	align-content: center;
+	width: 100%;
+}
+
+.equipped_stats{
+	margin-bottom: 20px;
+}
+
+.equipped_items{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	width: 100%;
+}
+
+.equipped_items img{
+	margin-bottom: 30px;
+	width: 100%;
+}
+
+.equipped_items p{
+	cursor: pointer;
+	width: 60%;
+}
+
+.inventory-border{
+	border: 5px solid #fff;
+	height: 100%;
+	overflow: auto;
+	scrollbar-color: #fff #000;
+	scrollbar-width: thin;
+}
+
+.inventory__item{
+	padding: 10px 20px;
+	display: grid;
+	grid-template-columns: 10% 60% 30%;
+}
+
+.inventory__item-image{
+	width: 100%;
+}
+
+.inventory__item-about{
+	margin-top: 5px;
+	margin-left: 12px;
+	align-self: center;
+}
+
+.inventory__item-detail{
+	justify-self: end;
+	width: 30%;
+}
+
+.inventory__item-detail:hover{
+	cursor: pointer;
+}
+
+.detail-border{
+	border: 5px solid #fff;
+	height: 100%;
+}
+
+.detail__item {
+	/* Initially hide the element */
+}
+
+.detail{
+	min-height: 100%;
+}
+
+.detail__item{
+	display: none;
+	padding: 20px;
+	height: 100%;
+}
+
+.detail__item-image{
+	width: 80%;
+}
+
+.detail__item-title{
+	margin: 15px 0;
+}
+
+.detail__item_main{
+	display: grid;
+	grid-template-columns: 25% 75%;
+	height: 20%;
+	margin-bottom: 20px;
+}
+
+.detail__item-about{
+	margin-top: 5px;
+	align-self: center;
+}
+
+.detail__item-description{
+	height: 90%;
+	overflow: auto;
+	scrollbar-color: #fff #000;
+	scrollbar-width: thin;
+}
+
+.detail__item__footer{
+	display: grid;
+	grid-template-columns: 65% 35%;
+	align-content: end;
+	align-self: end;
+}
+
+.detail__item__footer__stats{
+	align-self: end;
+}
+
+.detail__item__footer-equip{
+	display: grid;
+}
+
+.detail__item__footer-equip-image{
+	justify-self: center;
+	align-self: end;
+	width: 55%;
+}
+
+.detail__item__footer-equip p{
+	justify-self: center;
+	align-self: end;
+	text-align: center;
+}
+
+[data-tooltip] {
+	position: relative;
+}
+[data-tooltip]::after {
+	content: attr(data-tooltip);
+	position: absolute;
+	width: 100%;
+	height: 50%;
+	left: 23%; top: 70%;
+	color: #fff;
+	font-size: 2.5vw;
+	pointer-events: none; 
+	opacity: 0;
+	transition: .5s;
+} 
+[data-tooltip]:hover::after {
+	opacity: 1;
+	top: 77%;
+}

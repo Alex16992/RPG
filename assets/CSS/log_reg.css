@@ -1,0 +1,56 @@
+body{
+	padding: 0;
+}
+
+main{
+	width: 100%;
+	height: 100%;
+	background-image: url(../Image/bg/login_bg.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: grid;
+}
+
+.err{
+	font-size: 2.5vw;
+}
+
+.form{
+	width: 30%;
+	align-self: center;
+	justify-self: center;
+}
+
+.input {
+	background-color: transparent;
+	border: 5px solid white;
+	color: white;
+	padding: 9px 5px 5px 5px;
+	font-size: 2vw;
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.input::placeholder {
+	color: #626262;
+}
+
+.submit{
+	background-color: transparent;
+	border: 5px solid white;
+	color: white;
+	padding: 5px 5px 5px 5px;
+	margin-bottom: 20px;
+	font-size: 2vw;
+	height: 100%;
+	width: 100%;
+}
+
+.form__text{
+	color: #909090;
+}
+
+.form__text a{
+	color: #fff;
+}

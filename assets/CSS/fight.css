@@ -1,0 +1,210 @@
+.main {
+	display: grid;
+	grid-template-columns: 2fr 5fr 2fr;
+	grid-template-rows: 90% 90%;
+	margin-top: 3%;
+	height: 80%;
+	font-size: 2.5vw;
+}
+
+.PlayerStats{
+	border: 5px solid #fff;
+	padding: 20px 30px;
+	height: 95%;
+	overflow: auto;
+	scrollbar-color: #fff #000;
+  	scrollbar-width: thin;
+  	align-self: end;
+}
+
+.EnemyStats{
+	border: 5px solid #fff;
+	padding: 20px 30px;
+	height: 95%;
+	overflow: auto;
+	scrollbar-color: #fff #000;
+  	scrollbar-width: thin;
+  	align-self: end;
+}
+
+h3{
+	text-align: center;
+	margin: 10px 0;
+}
+
+.stats{
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.stats__value{
+	justify-self: end;
+}
+
+.BattleField{
+	background-image: url(../Image/bg/cemetery.png);
+	background-position: bottom;
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: grid;
+	height: 100%;
+	grid-template-columns: 3fr 200px 3fr;
+	align-content: end;
+}
+
+.BattleField__player{
+	display: grid;
+	align-self: end;
+	align-content: end;
+}
+
+.PlayerHealth{
+	justify-self: center;
+}
+
+.BattleField__player__img{
+	width: auto; /* Сохраняет пропорции изображения, не растягивая */
+  	max-width: 100%; /* Ограничивает максимальную ширину до 100% родительского элемента */
+  	height: auto;
+  	max-height: 100%;
+	justify-self: center;
+	align-self: end;
+}
+
+.EnemyHealth{
+	justify-self: center;s
+}
+
+.BattleField__enemy__img{
+  	width: auto; /* Сохраняет пропорции изображения, не растягивая */
+  	max-width: 100%; /* Ограничивает максимальную ширину до 100% родительского элемента */
+  	height: auto;
+  	max-height: 100%;
+	justify-self: center;
+	align-self: end;
+}
+
+.BattleField__enemy{
+	display: grid;
+	align-self: end;
+	align-content: end;
+}
+
+.PlayerHealth {
+	width: 55%;
+	height: 35px;
+	margin-bottom: 20px;
+	border: 6px solid #fff;
+	color: #878787;
+	position: relative;
+	overflow: hidden;
+}
+
+.PlayerHealth span {
+	font-size: 2vw;
+	position: absolute;
+	top: 65%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.PlayerHealth::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	background: linear-gradient(to right, #fff, #fff);
+	width: var(--fill-width, 100%);
+}
+
+.EnemyHealth {
+	width: 55%;
+	height: 35px;
+	margin-bottom: 20px;
+	border: 6px solid #fff;
+	color: #878787;
+	position: relative;
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+
+.EnemyHealth span {
+	font-size: 2vw;
+	position: absolute;
+	top: 70%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.EnemyHealth::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	background: linear-gradient(to right, #fff, #fff);
+	width: var(--fill-width, 100%);
+}
+
+footer{
+	font-size: 2.5vw;
+	display: grid;
+	grid-template-columns: 1fr 2fr 1fr;
+}
+
+.footer__button{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.footer__button p{
+	margin-right: 50px;
+	border: 4px solid #CDCDCD;
+	color: #CDCDCD;
+	text-align: center;
+	padding-top: 6px;
+}
+
+.footer__button p:last-child{
+	margin-right: 0px;
+}
+
+.footer__button p:hover{
+	cursor: pointer;
+	border: 4px solid #fff;
+	color: #fff;
+}
+
+.damagePlayer {
+    position: relative; /* Добавлено позиционирование для родительского элемента */
+    margin-bottom: 2%;
+}
+
+.damageEnemy {
+    position: relative; /* Добавлено позиционирование для родительского элемента */
+    margin-bottom: 2%;
+}
+
+.damageText {
+    position: absolute;
+    font-size: 24px;
+    color: #818181;
+    opacity: 1;
+    left: 48%;
+    font-size: 2vw;
+    animation: damageAnimation .7s ease-in-out;
+    top: -40px; /* Задайте подходящее значение для отображения над EnemyHealth */
+}
+
+@keyframes damageAnimation {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-55px);
+    }
+}
+
