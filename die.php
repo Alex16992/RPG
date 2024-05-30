@@ -43,7 +43,7 @@ if ($combat == 0) {
 							$enemyresult = mysqli_query($link, $enemyquery);
 							$enemyrow = mysqli_fetch_assoc($enemyresult);
 							$newBalance = $row['balance'] / 2;
-							$query = "UPDATE users SET combat = 0, location = null, enemy = null, enemy_hp = null, enemy_max_hp = null, health = '$row[max_health]', exp = 0, balance = $newBalance WHERE id = $userId";
+							$query = "UPDATE users SET combat = 0, location = null, enemy = null, enemy_hp = null, enemy_max_hp = null, health = '$row[max_health]', exp = 0, balance = $newBalance, enemy_effect_list = null, get_effect_list = null WHERE id = $userId";
 							$result = mysqli_query($link, $query);
 							$htmlOutput .= '<p>You lost the fight with the '. $enemyrow["name"] .' and lost all your experience, as well as half of your coins went to healing.</p>';
 							$htmlOutput .= '<a href="inventory.php" class="loot__link">Back to inventory</a>';

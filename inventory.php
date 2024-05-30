@@ -63,6 +63,9 @@
 							<div class="detail__item__footer__stats-main">
 
 							</div>
+							<div class="detail__item__footer__stats-effect">
+
+							</div>
 							<div class="detail__item__footer__stats-crit">
 
 							</div>

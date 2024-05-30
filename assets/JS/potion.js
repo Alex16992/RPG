@@ -41,6 +41,8 @@ function getPotionInfo() {
 function upgradePotion(){
     const xhr = new XMLHttpRequest();
     const url = 'AJAX/upgrade_potion.php';
+    var mouseClickAudio = new Audio('assets/Sound/potion_upgrade.flac');
+    mouseClickAudio.play();
 
     xhr.onreadystatechange = function() {
         if (xhr.readyState === XMLHttpRequest.DONE){
@@ -62,6 +64,8 @@ function upgradePotion(){
 function craftPotion(){
     const xhr = new XMLHttpRequest();
     const url = 'AJAX/craft_potion.php';
+    var mouseClickAudio = new Audio('assets/Sound/potion_craft.mp3');
+    mouseClickAudio.play();
 
     xhr.onreadystatechange = function() {
         if (xhr.readyState === XMLHttpRequest.DONE) {
@@ -83,6 +87,8 @@ function craftPotion(){
 function sellPotion(){
     const xhr = new XMLHttpRequest();
     const url = 'AJAX/sell_potion.php';
+    var mouseClickAudio = new Audio('assets/Sound/sell.wav');
+    mouseClickAudio.play();
 
     xhr.onreadystatechange = function() {
         if (xhr.readyState === XMLHttpRequest.DONE) {

@@ -52,6 +52,14 @@ if ($combat == 0) {
 					<?php echo $armor; ?>
 				</div>
 			</div>
+			<div class="stats">
+				<div class="stats__name">
+					Crit
+				</div>
+				<div class="stats__value">
+					<?php echo $crit; ?>%
+				</div>
+			</div>
 			<h3 class="passive">
 				
 			</h3>

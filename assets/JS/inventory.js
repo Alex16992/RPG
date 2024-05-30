@@ -25,17 +25,21 @@ function showItemDetail(itemId, itemLevel) {
  detailElement.style.display = 'grid';
  const xhr = new XMLHttpRequest();
  const url = `AJAX/get_item_details.php?itemId=${itemId}`;
+ var mouseClickAudio = new Audio('assets/Sound/mouse_click.flac');
+ mouseClickAudio.play();
 
  xhr.onreadystatechange = function() {
     if (xhr.readyState === XMLHttpRequest.DONE) {
         if (xhr.status === 200) {
             const selectedItem = JSON.parse(xhr.responseText);
+            console.log(selectedItem);
             const detailElement = document.getElementById('itemDetail');
             const detailItemName = detailElement.querySelector('.detail__item-name');
             const detailItemImage = detailElement.querySelector('.detail__item-image');
             const detailItemLevel = detailElement.querySelector('.detail__item-lvl');
             const detailItemDescription = detailElement.querySelector('.detail__item-description');
             const detailItemDamage = detailElement.querySelector('.detail__item__footer__stats-main');
+            const detailItemEffect = detailElement.querySelector('.detail__item__footer__stats-effect');
             const detailItemCrit = detailElement.querySelector('.detail__item__footer__stats-crit');
             const detailItemSlot = detailElement.querySelector('.detail__item__footer__stats-slot');
             const detailItemPrice = detailElement.querySelector('.detail__item__footer__stats-price');
@@ -70,6 +74,13 @@ function showItemDetail(itemId, itemLevel) {
                     }
                 }
             }
+
+            //Get effect
+            if (selectedItem.effectName != null) {
+                detailItemEffect.textContent = "Effect: " + selectedItem.effectName;
+            } else {
+                detailItemEffect.textContent = "";
+            }
             
 
             //Get price using my formula
@@ -82,7 +93,7 @@ function showItemDetail(itemId, itemLevel) {
                 detailEquip.style.display = 'none';
                 detailEquipText.style.display = 'none';
             }
-            if (selectedItem.crit != null) {
+            if (selectedItem.crit != 0) {
                 detailItemCrit.textContent = "Crit: " + selectedItem.crit + "%";
                 detailItemCrit.style.display = 'block';
             } else {
@@ -111,6 +122,17 @@ function equipItem(itemId, slot, lvl) {
     xhr.onreadystatechange = function() {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
+                var responseText = xhr.responseText.trim();
+                if (responseText === "helmet" || responseText === "body") {
+                    var equipAudio = new Audio('assets/Sound/equip_item.mp3');
+                    equipAudio.volume = 0.6;
+                    equipAudio.play();
+                }
+                else if (responseText === "weapon") {
+                    var equipAudio = new Audio('assets/Sound/equip_sword.wav');
+                    equipAudio.volume = 1;
+                    equipAudio.play();
+                }
                 const detailElement = document.getElementById('detail__item');
                 //Hide the "Details" window
                 detailElement.style.display = 'none';
@@ -182,6 +204,8 @@ function updateChar() {
 function unequipHelmet() {
     const xhr = new XMLHttpRequest();
     const url = 'AJAX/unequip_helmet.php';
+    var mouseClickAudio = new Audio('assets/Sound/mouse_click.flac');
+    mouseClickAudio.play();
 
     xhr.onreadystatechange = function() {
         if (xhr.readyState === XMLHttpRequest.DONE) {
@@ -204,6 +228,8 @@ function unequipHelmet() {
 function unequipBody() {
     const xhr = new XMLHttpRequest();
     const url = 'AJAX/unequip_body.php';
+    var mouseClickAudio = new Audio('assets/Sound/mouse_click.flac');
+    mouseClickAudio.play();
 
     xhr.onreadystatechange = function() {
         if (xhr.readyState === XMLHttpRequest.DONE) {
@@ -226,6 +252,8 @@ function unequipBody() {
 function unequipWeapon_left() {
     const xhr = new XMLHttpRequest();
     const url = 'AJAX/unequip_weapon_left.php';
+    var mouseClickAudio = new Audio('assets/Sound/mouse_click.flac');
+    mouseClickAudio.play();
 
     xhr.onreadystatechange = function() {
         if (xhr.readyState === XMLHttpRequest.DONE) {
@@ -247,6 +275,8 @@ function unequipWeapon_left() {
 function unequipWeapon_right() {
     const xhr = new XMLHttpRequest();
     const url = 'AJAX/unequip_weapon_right.php';
+    var mouseClickAudio = new Audio('assets/Sound/mouse_click.flac');
+    mouseClickAudio.play();
 
     xhr.onreadystatechange = function() {
         if (xhr.readyState === XMLHttpRequest.DONE) {

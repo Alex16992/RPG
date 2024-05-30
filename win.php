@@ -72,7 +72,7 @@ if ($combat == 0) {
 							$updatedInventory = json_encode($currentInventory);
 							$randomMoney = rand($enemyLevel*3, $enemyLevel*5);
 							$newMoney = $row['balance'] + $randomMoney;
-							$query = "UPDATE users SET combat = 0, balance = $newMoney, location = null, enemy = null, enemy_hp = null, enemy_max_hp = null, items = '$updatedInventory', health = '$currentMaxHealth', max_health = '$currentMaxHealth', lvl = '$currentLevel', exp = '$remainingExp' WHERE id = $userId";
+							$query = "UPDATE users SET combat = 0, balance = $newMoney, location = null, enemy = null, enemy_hp = null, enemy_max_hp = null, items = '$updatedInventory', health = '$currentMaxHealth', max_health = '$currentMaxHealth', lvl = '$currentLevel', exp = '$remainingExp', enemy_effect_list = null, get_effect_list = null WHERE id = $userId";
 							$result = mysqli_query($link, $query);
 							$htmlOutput .= '<p>You defeated the '. $enemyrow["name"] .' and get: '.$itemrow["name"].' '. $randomLvlItem .' lvl, '. $getExp .' exp and '. $randomMoney .' coins</p>';
 							$htmlOutput .= '<a href="inventory.php" class="loot__link">Back to inventory</a>';

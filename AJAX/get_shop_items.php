@@ -42,7 +42,7 @@ if ($result) {
         }
 
         // Update the shop and set a new update_shop time (1 hour from now)
-        $updateShopTimestamp = $currentTimestamp - 3600;
+        $updateShopTimestamp = $currentTimestamp + 3600;
         $updatedShopData = json_encode($shopData);
         $query = "UPDATE users SET shop = '$updatedShopData', update_shop = FROM_UNIXTIME($updateShopTimestamp) WHERE id = $userId";
         $updateResult = mysqli_query($link, $query);

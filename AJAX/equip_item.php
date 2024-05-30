@@ -61,17 +61,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         $updateResult = mysqli_query($link, $updateQuery);
 
                         if ($updateResult) {
-                            echo 'Item equipped successfully!';
+                            echo $slot;
                         } else {
                             echo 'Error updating items: ' . mysqli_error($link);
                         }
                     } else {
                         echo 'Error fetching items: ' . mysqli_error($link);
-                    }
-                    if ($result) {
-                        echo 'Item equipped successfully!';
-                    } else {
-                        echo 'Error: ' . mysqli_error($link);
                     }
                 } else {
                     echo 'Error updating user: ' . mysqli_error($link);

@@ -11,6 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="assets/CSS/header.css">
 	<link rel="stylesheet" type="text/css" href="assets/CSS/footer.css">
 	<link rel="stylesheet" type="text/css" href="assets/CSS/style.css">
+	<link rel="stylesheet" type="text/css" href="assets/CSS/index.css">
 </head>
 <body>
 	<?php include 'header.php'; ?>
@@ -19,21 +20,17 @@
 			<h2 class="title">Last update</h2>
 			<div class="update-log">
 				<h3 class="update-log__title">
-					First update / Fix bugs
+					Effects!
 				</h3>
 				<h4 class="update-log__date">
-					18.09.2023
+					30.05.2024
 				</h4>
-				<p class="update-log__text">
-					Fixed bugs related to game performance and stability to provide smoother gameplay.
-					Improved balancing of the combat system, taking into account player feedback to provide more interesting and fair battles.
-					Made minor changes to the interface and gameplay to make the gameplay more intuitive and engaging.Fixed bugs related to game performance and stability to provide smoother gameplay.
-					Improved balancing of the combat system, taking into account player feedback to provide more interesting and fair battles.
-					Made minor changes to the interface and gameplay to make the gameplay more intuitive and engaging.Fixed bugs related to game performance and stability to provide smoother gameplay.
-					Improved balancing of the combat system, taking into account player feedback to provide more interesting and fair battles.
-					Made minor changes to the interface and gameplay to make the gameplay more intuitive and engaging.Fixed bugs related to game performance and stability to provide smoother gameplay.
-					Improved balancing of the combat system, taking into account player feedback to provide more interesting and fair battles.
-					Made minor changes to the interface and gameplay to make the gameplay more intuitive and engaging.
+				<p class="update-log__text">	
+				Made sound effects.
+<br>			
+Added passive effects for weapons and enemies.
+<br>
+Optimized images.
 				</p>
 			</div>
 		</div>

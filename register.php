@@ -136,7 +136,7 @@ mysqli_close($link);
 				<input name='login' class="input" type='text' placeholder='Login...' autocomplete="off">
 				<input name='email' class="input" type='email' placeholder='Email...' autocomplete="off">
 				<input name='password' class="input" type='password' placeholder='Password...' autocomplete="new-password">
-				<div class="g-recaptcha" data-sitekey="PUBLIC_KEY" data-theme="dark"></div>
+				<!-- <div class="g-recaptcha" data-sitekey="PUBLIC_KEY" data-theme="dark"></div> -->
 				<input name="send" class="submit" type="submit" value="Register">
 			</form>
 			<p class="form__text">

@@ -45,6 +45,8 @@ function showItemDetail(itemId, itemLevel) {
  detailElement.style.display = 'grid';
  const xhr = new XMLHttpRequest();
  const url = `AJAX/get_item_details.php?itemId=${itemId}`;
+ var mouseClickAudio = new Audio('assets/Sound/mouse_click.flac');
+ mouseClickAudio.play();
 
  xhr.onreadystatechange = function() {
     if (xhr.readyState === XMLHttpRequest.DONE) {
@@ -57,6 +59,7 @@ function showItemDetail(itemId, itemLevel) {
             const detailItemImage = detailElement.querySelector('.detail__item-image');
             const detailItemLevel = detailElement.querySelector('.detail__item-lvl');
             const detailItemDescription = detailElement.querySelector('.detail__item-description');
+            const detailItemEffect = detailElement.querySelector('.detail__item__footer__stats-effect');
             const detailItemDamage = detailElement.querySelector('.detail__item__footer__stats-main');
             const detailItemSlot = detailElement.querySelector('.detail__item__footer__stats-slot');
             const detailItemPrice = detailElement.querySelector('.detail__item__footer__stats-price');
@@ -90,6 +93,13 @@ function showItemDetail(itemId, itemLevel) {
                     }
                 }
             }
+
+            //Get effect
+            if (selectedItem.effectName != null) {
+                detailItemEffect.textContent = "Effect: " + selectedItem.effectName;
+            } else {
+                detailItemEffect.textContent = "";
+            }
             
 
             //Get price using my formula
@@ -116,6 +126,8 @@ function showSellItemDetail(itemId, itemLevel) {
  detailElement.style.display = 'grid';
  const xhr = new XMLHttpRequest();
  const url = `AJAX/get_sell_details_shop.php?itemId=${itemId}`;
+ var mouseClickAudio = new Audio('assets/Sound/mouse_click.flac');
+ mouseClickAudio.play();
 
  xhr.onreadystatechange = function() {
     if (xhr.readyState === XMLHttpRequest.DONE) {
@@ -129,6 +141,7 @@ function showSellItemDetail(itemId, itemLevel) {
             const detailItemLevel = detailElement.querySelector('.detail__item-lvl');
             const detailItemDescription = detailElement.querySelector('.detail__item-description');
             const detailItemDamage = detailElement.querySelector('.detail__item__footer__stats-main');
+            const detailItemEffect = detailElement.querySelector('.detail__item__footer__stats-effect');
             const detailItemSlot = detailElement.querySelector('.detail__item__footer__stats-slot');
             const detailItemPrice = detailElement.querySelector('.detail__item__footer__stats-price');
             const detailSell = detailElement.querySelector('.detail__item__footer-equip-image');
@@ -161,6 +174,13 @@ function showSellItemDetail(itemId, itemLevel) {
                     }
                 }
             }
+
+            //Get effect
+            if (selectedItem.effectName != null) {
+                detailItemEffect.textContent = "Effect: " + selectedItem.effectName;
+            } else {
+                detailItemEffect.textContent = "";
+            }
             
 
             //Get price using my formula
@@ -187,6 +207,9 @@ function sellItem(itemId, slot, lvl) {
 
    const xhr = new XMLHttpRequest();
    const url = 'AJAX/sellitems.php';
+   var sellAudio = new Audio('assets/Sound/sell.mp3');
+   sellAudio.volume = 0.6;
+   sellAudio.play();
 
    xhr.onreadystatechange = function() {
       if (xhr.readyState === XMLHttpRequest.DONE) {
@@ -211,6 +234,9 @@ function buyItem(itemId, slot, lvl) {
 
    const xhr = new XMLHttpRequest();
    const url = 'AJAX/buyitems.php';
+   var buyAudio = new Audio('assets/Sound/sell.mp3');
+   buyAudio.volume = 0.6;
+   buyAudio.play();
 
    xhr.onreadystatechange = function() {
       if (xhr.readyState === XMLHttpRequest.DONE) {

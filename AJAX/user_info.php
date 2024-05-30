@@ -28,11 +28,15 @@ if ($result) {
     $health = $row['health'];
     $max_health = $row['max_health'];
     $combat = $row['combat'];
+    $crit = $row['crit'];
     $damage = $row['damage'];
     $armor = $row['armor'];
     $potion = $row['potion'];
     $turn = $row['turn'];
     $exp = $row['exp'];
+    $effect_list = $row['effect_list'];
+    $enemy_effect_list = $row['enemy_effect_list'];
+    $get_effect_list = $row['get_effect_list'];
 }
 
 ?>

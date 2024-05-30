@@ -193,8 +193,8 @@ footer{
     opacity: 1;
     left: 48%;
     font-size: 2vw;
-    animation: damageAnimation .7s ease-in-out;
-    top: -40px; /* Задайте подходящее значение для отображения над EnemyHealth */
+    animation: damageAnimation 1.5s ease-in-out;
+    top: -100px;
 }
 
 @keyframes damageAnimation {
